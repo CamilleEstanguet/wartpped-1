@@ -19,8 +19,6 @@ body{
     bottom: 10px;
     left: 50%;
     transform: translate(-50%);
-    border-left: solid var(--slider-bar) 10px ;
-    border-right: solid var(--slider-bar) 10px ;
 }
 
 .slidecontainer:hover{opacity: 1;}
@@ -45,9 +43,12 @@ body{
     width: 25px;
     height: 25px;
     cursor: pointer;
+    /* 
+        Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
+    */
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border: solid white;
+    border: solid var(--slider-bar);
     border-width: 0 3px 3px 0;
     padding: 3px;
 }
@@ -56,10 +57,28 @@ body{
     width: 25px;
     height: 25px;
     cursor: pointer;
+    /* 
+        Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
+    */
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border: solid white;
+    border: solid var(--slider-bar);
     border-width: 0 3px 3px 0;
     padding: 3px;
+}
+
+.year {
+    position: relative;
+    display: block;
+    width: 50;
+    height: 50;
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-weight: bold;
+    padding-top: 22px;
+    box-sizing: border-box;
+    left: attr(value);
+    color: var(--slider-bar);
+    font-size: 36px;    
 }
 /* === END OF SLIDER PART === */
