@@ -5,4 +5,43 @@ body{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    padding-top: 10px;
+}
+/*Icônes*/
+#soundOn{
+    visibility: visible;
+    color: white;font-size: 22px;
+    position: absolute;
+    left: 96%;
+    padding-top: 10px;
+}
+#soundOff{
+    visibility: hidden;
+    color: white;font-size: 22px;
+    position: absolute;
+    left: 96%;
+    padding-top: 10px;
+}
+#download{
+    color: white;font-size: 22px;
+    position: absolute;
+    left: 98%;
+    transform: translate(5%);
+    padding-top: 10px;
+}
+#chevronUp{
+    color: white;font-size: 22px;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translate(-50%);
+    padding-top: 10px;
+}
+#chevronDown{
+    color: white;font-size: 22px;
+    position: absolute;
+    bottom: 11%;
+    left: 50%;
+    transform: translate(-50%);
+    padding-top: 10px;
 }
