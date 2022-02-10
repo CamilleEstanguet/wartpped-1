@@ -1,0 +1,73 @@
+[
+    {
+      "titre": "Fish",
+      "auteur": "Wolfgang Buntrock",
+      "dates" : [
+        "Octobre 1997",
+        "1997",
+        "Disparue"
+      ],
+     
+      "description" : [ "Œuvre créée en 1997  à Lillesand en Norvège. Cette œuvre représente un poisson fait en morceaux de bois. Seulement la moitié de ces morceaux sont émergés et la seconde moitié de l'animal est faite par les ombres.",
+       "L'oeuvre à certainement disparue suite aux changements climatiques et l'eau à probablement fait moisir le bois à cause de l'humidité."
+        ],
+
+      "photos": [
+        "/fish/fish_1.jpeg",
+        "/fish/fish_2.jpg"
+      ],
+
+      "localisation" : [
+          "Lillesand",
+          "Norvège",
+          "Photos du pays"
+      ]
+    },
+
+    {
+        "titre": "Eisvirus",
+        "auteur": "Frank Nordiek et Wolfgang Buntrock",
+        "date" : [
+          "2016",
+          "2016",
+          "Disparue"
+        ],
+       
+        "description": ["Réalisé avec des branches de noisetier, ce dôme de glace de 3m de diamètre à été réalise sur le lac de Poggenhagen en Allemagne.",
+        "L'oeuvre a disparu suite aux montées de température début 2017."
+        ],
+        "photos": [
+            "/eisvirus/eisvirus_1.jpg",
+            "/eisvirus/eisvirus_2.jpg",
+            "/eisvirus/eisvirus_3.jpg"
+        ],
+        "localisation" : [
+            "Poggenhagan",
+            "Allemagne",
+            "Photos du pays"
+        ]
+      },
+
+      {
+        "titre": "Arc de Triomphe Wrapped",
+        "auteur": "Chrito et Jeanne-Claude",
+        "date" : [
+          "18 Septembre 2021",
+          "3 Octobre 2021",
+          "Disparue"
+        ],
+       
+        "description": ["L’équipe Christo et Jeanne-Claude a réalisé L’Arc de Triomphe, Wrapped, Paris (1961-2021), selon le vœu de Christo qui souhaitait la poursuite du projet après sa disparition, survenue le 31 mai 2020. "
+        ],
+        "photos": [
+            "/arcDeTriompheWrapped/arcDeTriomphe_1.png",
+            "/arcDeTriompheWrapped/arcDeTriomphe_2.jpg",
+            "/arcDeTriompheWrapped/arcDeTriomphe_3.jpg"
+        ],
+        "localisation" : [
+            "Paris",
+            "France",
+            "Photos du pays"
+        ]
+      }
+  ]
