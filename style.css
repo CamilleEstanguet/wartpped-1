@@ -29,8 +29,11 @@ body{
 }
 .menu > li > a{
     text-decoration: none;
-    color: white;
+    color: var(--grey-simple);
     font-size: 45px;
+}
+.menu > li > a:hover{
+    color: white;
 }
 /* === END OF MENU ===*/
 /* === SLIDER PART === */
