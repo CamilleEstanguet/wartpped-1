@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="media/favicon.png" />
 </head>
@@ -24,9 +24,9 @@
             rangeSlider.addEventListener("input", showSliderValue, false);
 
             function showSliderValue() {
-            rangeBullet.innerHTML = rangeSlider.value;
-            var bulletPosition = (rangeSlider.value /rangeSlider.max);
-            rangeBullet.style.left = (bulletPosition * 1000) + "px";
+                rangeBullet.innerHTML = rangeSlider.value;
+                var bulletPosition = (rangeSlider.value / rangeSlider.max);
+                rangeBullet.style.left = (bulletPosition * 1000) + "px";
             }
         </script>
     </div>
@@ -42,14 +42,14 @@
         let slider = document.getElementById("range");
         let up = document.getElementById("toggleSlider");
         let down = document.getElementById("hideSlider");
-        function showRange(){
-            slider.style.display = "block"; 
+        function showRange() {
+            slider.style.display = "block";
             up.style.display = "none";
             down.style.display = "block";
         }
 
-        function hideRange(){
-            slider.style.display = "none"; 
+        function hideRange() {
+            slider.style.display = "none";
             down.style.display = "none";
             up.style.display = "block";
         }

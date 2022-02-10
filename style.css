@@ -45,29 +45,29 @@ body{
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     /* 
         Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
     */
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border: solid var(--grey-simple);
+    border: solid white;
     border-width: 0 3px 3px 0;
     padding: 3px;
 }
 
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     /* 
         Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
     */
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border: solid var(--grey-simple);
+    border: solid white;
     border-width: 0 3px 3px 0;
     padding: 3px;
 }
