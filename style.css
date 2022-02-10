@@ -1,20 +1,38 @@
+/* === FONTS ===*/
 @font-face {
     font-family: "Attentica";
-    src: url("/fonts/Attentica_4F_UltraLight.otf") format("otf"),
-        url("/fonts/Attentica_4F_UltraLight.ttf") format("truetype");
+    src: url("fonts/Attentica\ 4F\ UltraLight.otf");
+    src: url("fonts/Attentica\ 4F\ UltraLight.ttf");
 }
 :root{
     --slider-bar: #f3f3f3bd; 
 }
 body{
     background-color: black;
-    font-family: A
 }
 #logo{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    padding-top: 10px;
 }
+/* === MENU ===*/
+.menu{
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+}
+.menu > li{
+    font-family: "Attentica";
+    text-align: right;
+    padding: 5px 0;
+}
+.menu > li > a{
+    text-decoration: none;
+    color: white;
+    font-size: 45px;
+}
+/* === END OF MENU ===*/
 /* === SLIDER PART === */
 
 .slidecontainer {
@@ -86,8 +104,6 @@ body{
     font-size: 24px;    
 }
 /* === END OF SLIDER PART === */
-    padding-top: 10px;
-}
 /*Icônes*/
 #soundOn{
     visibility: visible;
