@@ -4,13 +4,13 @@
         url("/fonts/Attentica_4F_UltraLight.ttf") format("truetype");
 }
 :root{
-    --slider-bar: #f3f3f3bd; 
+    --grey-simple: #f3f3f3bd; 
 }
 body{
     background-color: black;
     font-family: A
 }
-#logo{
+.logo{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -23,6 +23,7 @@ body{
     bottom: 8%;
     left: 50%;
     transform: translate(-50%);
+    display: none;
 }
 
 .slidecontainer:hover{opacity: 1;}
@@ -32,7 +33,7 @@ body{
     appearance: none;
     width: 100%;
     height: 5px;
-    background: var(--slider-bar);
+    background: var(--grey-simple);
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
@@ -52,7 +53,7 @@ body{
     */
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border: solid var(--slider-bar);
+    border: solid var(--grey-simple);
     border-width: 0 3px 3px 0;
     padding: 3px;
 }
@@ -66,7 +67,7 @@ body{
     */
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    border: solid var(--slider-bar);
+    border: solid var(--grey-simple);
     border-width: 0 3px 3px 0;
     padding: 3px;
 }
@@ -82,47 +83,55 @@ body{
     padding-top: 22px;
     box-sizing: border-box;
     left: attr(value);
-    color: var(--slider-bar);
+    color: var(--grey-simple);
     font-size: 24px;    
 }
 /* === END OF SLIDER PART === */
-    padding-top: 10px;
-}
+
 /*Icônes*/
-#soundOn{
+.soundOn{
     visibility: visible;
-    color: white;font-size: 22px;
+    color: var(--grey-simple);font-size: 22px;
     position: absolute;
     left: 96%;
     padding-top: 10px;
+    cursor: pointer;
 }
-#soundOff{
+.soundOff{
     visibility: hidden;
-    color: white;font-size: 22px;
+    color: var(--grey-simple);font-size: 22px;
     position: absolute;
     left: 96%;
     padding-top: 10px;
+    cursor: pointer;
 }
-#download{
-    color: white;font-size: 22px;
+.download{
+    color: var(--grey-simple);font-size: 22px;
     position: absolute;
     left: 98%;
     transform: translate(5%);
     padding-top: 10px;
+    cursor: pointer;
 }
-#chevronUp{
-    color: white;font-size: 22px;
+.chevronUp{
+    color: var(--grey-simple);font-size: 22px;
     position: absolute;
     bottom: 4%;
     left: 50%;
     transform: translate(-50%);
     padding-top: 10px;
+    cursor: pointer;
 }
-#chevronDown{
-    color: white;font-size: 22px;
+.chevronDown{
+    color: var(--grey-simple);font-size: 22px;
     position: absolute;
     bottom: 11%;
     left: 50%;
     transform: translate(-50%);
     padding-top: 10px;
+    cursor: pointer;
+    display: none;
+}
+.chevronDown:hover, .chevronUp:hover, .download:hover, .soundOff:hover, .soundOn:hover{
+    color: white;
 }

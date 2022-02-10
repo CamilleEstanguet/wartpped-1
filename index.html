@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <img id="logo" src="media/logo.png">
-    <div class="slidecontainer">
+    <img class="logo" src="media/logo.png">
+    <div class="slidecontainer" id="range">
         <output class="year" id="range-bullet"></output>
-        <input type="range" min="0" max="2022" class="slider" id="range-line">
+        <input type="range" min="1800" max="2022" class="slider" id="range-line">
         <script>
             var rangeSlider = document.getElementById("range-line");
             var rangeBullet = document.getElementById("range-bullet");
@@ -26,29 +26,34 @@
             function showSliderValue() {
             rangeBullet.innerHTML = rangeSlider.value;
             var bulletPosition = (rangeSlider.value /rangeSlider.max);
-            rangeBullet.style.left = (bulletPosition * 100) + "%";
+            rangeBullet.style.left = (bulletPosition * 1000) + "px";
             }
         </script>
     </div>
-    <img id="logo" src="media/logo.png"> 
-    <i id="soundOn" class="fas fa-volume-up"></i>
-    <i id="soundOff" class="fas fa-volume-mute"></i>
-    <i id="download"class="fas fa-download"></i>
+    <i class="fas fa-volume-up soundOn"></i>
+    <i class="fas fa-volume-mute soundOff"></i>
+    <i class="fas fa-download download"></i>
     <div class="menu">
         <a href="">L'art in situ</a>
     </div>
+    <i id="toggleSlider" class="fas fa-chevron-up chevronUp" onclick="showRange()"></i>
+    <i id="hideSlider" class="fas fa-chevron-down chevronDown" onclick="hideRange()"></i>
+    <script>
+        let slider = document.getElementById("range");
+        let up = document.getElementById("toggleSlider");
+        let down = document.getElementById("hideSlider");
+        function showRange(){
+            slider.style.display = "block"; 
+            up.style.display = "none";
+            down.style.display = "block";
+        }
 
-
-
-
-
-
-
-
-
-
-    <i id="chevronUp"class="fas fa-chevron-up"></i>
-    <i id="chevronDown"class="fas fa-chevron-down"></i>
+        function hideRange(){
+            slider.style.display = "none"; 
+            down.style.display = "none";
+            up.style.display = "block";
+        }
+    </script>
 </body>
 
 </html>
