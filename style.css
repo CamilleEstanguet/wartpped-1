@@ -90,7 +90,7 @@ body{
     padding: 3px;
 }
 
-.year {
+.bullet {
     position: relative;
     display: block;
     width: 50;
@@ -103,6 +103,7 @@ body{
     left: attr(value);
     color: var(--grey-simple);
     font-size: 24px;    
+    font-family: "Attentica";
 }
 /* === END OF SLIDER PART === */
 
