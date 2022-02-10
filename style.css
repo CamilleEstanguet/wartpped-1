@@ -1,9 +1,14 @@
+@font-face {
+    font-family: "Attentica";
+    src: url("/fonts/Attentica_4F_UltraLight.otf") format("otf"),
+        url("/fonts/Attentica_4F_UltraLight.ttf") format("truetype");
+}
 :root{
     --slider-bar: #f3f3f3bd; 
 }
-
 body{
     background-color: black;
+    font-family: A
 }
 #logo{
     position: absolute;
