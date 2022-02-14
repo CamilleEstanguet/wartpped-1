@@ -7,6 +7,54 @@ body{
     transform: translate(-50%);
     padding-top: 10px;
 }
+.planete{
+    position: absolute;
+    left: 5%;
+    transform: translate(-50%);
+    color: aliceblue;
+}
+
+.art-in-situ-1{
+    position: absolute;
+    left : 15%;
+    top : 50%;
+    transform: translate(-50%);
+    color: aliceblue;
+    opacity: 50%;
+    width: 25%;
+}
+
+.art-in-situ-1 p, .art-in-situ-2 p, .art-in-situ-3 p{
+    text-align: start;
+    width: 80%;
+    padding-left: 5%;
+}
+
+
+.art-in-situ-1:hover, .art-in-situ-2:hover, .art-in-situ-3:hover{
+    opacity: 100%;
+}
+
+.art-in-situ-2{
+    position: absolute;
+    left : 85%;
+    top : 25%;
+    transform: translate(-50%);
+    color: aliceblue;
+    opacity: 50%;
+    width: 25%;
+}
+
+.art-in-situ-3{
+    position: absolute;
+    left : 75%;
+    top : 75%;
+    transform: translate(-50%);
+    color: aliceblue;
+    opacity: 50%;
+    width: 25%;
+}
+
 /*Icônes*/
 #soundOn{
     visibility: visible;
