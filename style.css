@@ -175,20 +175,40 @@ header{
     font-family: "Attentica";
     font-size: 45px;
     color: white;
-    width: 80%;
+    width: 90%;
     top: 40%;
     left: 10%;
 }
-input[type=text]{
+input[type=text], input[type=email], textarea, input[type=submit]{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--grey-simple);
     font-family: "Attentica";
     font-size: 45px;
     color: var(--grey-simple);
-}x
-input[type=text]:hover, input[type=text]:focus{
+}
+input[type=text]{
+    width: 40%;
+}
+input[type=email]{
+    width: 90%;
+}
+textarea{
+    width: 90%;
+    resize: none;
+}
+input[type=submit]{
+    border: 2px solid var(--grey-simple);
+    justify-content: center;
+}
+
+input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[type=email]:focus, textarea:hover, textarea:active{
     outline: transparent;
     border-bottom: 2px solid white;
+    color: white;
+}
+input[type=submit]:hover{
+    outline: transparent;
+    border: 2px solid white;
     color: white;
 }
