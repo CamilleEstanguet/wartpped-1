@@ -14,7 +14,14 @@
 </head>
 
 <body>
-    <img class="logo" src="media/logo.png">
+    <header>
+        <img class="logo" src="media/logo.png">
+        <div class="box-icons">
+            <i class="fas fa-volume-up soundOn"></i>
+            <i class="fas fa-volume-mute soundOff"></i>
+            <i class="fas fa-download download"></i>
+        </div>
+    </header>
     <div class="slidecontainer" id="range">
         <output class="bullet" id="range-bullet"></output>
         <input type="range" min="1800" max="2022" value="1800" class="slider" id="range-line">
@@ -32,9 +39,6 @@
             }
         </script>
     </div>
-    <i class="fas fa-volume-up soundOn"></i>
-    <i class="fas fa-volume-mute soundOff"></i>
-    <i class="fas fa-download download"></i>
     <ul class="menu">
         <li><a href="">L'art in situ</a></li>
         <li><a href="">Le land art</a></li>

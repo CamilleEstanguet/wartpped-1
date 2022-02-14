@@ -1,41 +1,100 @@
-/* === FONTS ===*/
+/* === FONTS === */
 @font-face {
     font-family: "Attentica";
     src: url("fonts/Attentica\ 4F\ UltraLight.otf");
     src: url("fonts/Attentica\ 4F\ UltraLight.ttf");
 }
+/* === END OF FONTS === */
+
+/* === VARIABLES === */
 :root{
     --grey-simple: #f3f3f3bd; 
 }
+/* === END OF VARIABLES === */
+
+/* === COMMON === */
 body{
     background-color: black;
 }
+header{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
 .logo{
+    padding-top: 10px;
+}
+/* === ICÔNES ===*/
+.box-icons{
     position: fixed;
+    color: var(--grey-simple);
+    font-size: 22px;
+    left: 90%;
+}
+.box-icons:before{
+    transform: translateX(20%);
+}
+.soundOn{
+    visibility: visible;
+    cursor: pointer;
+}
+.soundOff{
+    visibility: hidden;
+    cursor: pointer;
+}
+.download{
+    cursor: pointer;
+}
+.chevronUp{
+    color: var(--grey-simple);font-size: 22px;
+    position: fixed;
+    bottom: 4%;
     left: 50%;
     transform: translate(-50%);
     padding-top: 10px;
+    cursor: pointer;
 }
+.chevronDown{
+    color: var(--grey-simple);font-size: 22px;
+    position: fixed;
+    bottom: 13%;
+    left: 50%;
+    transform: translate(-50%);
+    padding-top: 10px;
+    cursor: pointer;
+    display: none;
+}
+.chevronDown:hover, .chevronUp:hover, .download:hover, .soundOff:hover, .soundOn:hover{
+    color: white;
+}
+/* === END OF ICÔNS === */
+/* === END OF COMMON === */
+
 /* === MENU ===*/
 .menu{
     position: fixed;
     right: 5%;
     bottom: 20%;
 }
-.menu > li{
+.menu li{
     font-family: "Attentica";
     text-align: right;
     padding: 5px 0;
 }
-.menu > li > a{
+.menu li a{
     text-decoration: none;
     color: var(--grey-simple);
     font-size: 45px;
 }
-.menu > li > a:hover{
+.menu li a:hover{
     color: white;
 }
 /* === END OF MENU ===*/
+
 /* === SLIDER PART === */
 
 .slidecontainer {
@@ -110,54 +169,6 @@ body{
 }
 /* === END OF SLIDER PART === */
 
-/* === ICÔNES ===*/
-.soundOn{
-    visibility: visible;
-    color: var(--grey-simple);font-size: 22px;
-    position: fixed;
-    left: 96%;
-    padding-top: 10px;
-    cursor: pointer;
-}
-.soundOff{
-    visibility: hidden;
-    color: var(--grey-simple);font-size: 22px;
-    position: fixed;
-    left: 96%;
-    padding-top: 10px;
-    cursor: pointer;
-}
-.download{
-    color: var(--grey-simple);font-size: 22px;
-    position: fixed;
-    left: 98%;
-    transform: translate(5%);
-    padding-top: 10px;
-    cursor: pointer;
-}
-.chevronUp{
-    color: var(--grey-simple);font-size: 22px;
-    position: fixed;
-    bottom: 4%;
-    left: 50%;
-    transform: translate(-50%);
-    padding-top: 10px;
-    cursor: pointer;
-}
-.chevronDown{
-    color: var(--grey-simple);font-size: 22px;
-    position: fixed;
-    bottom: 13%;
-    left: 50%;
-    transform: translate(-50%);
-    padding-top: 10px;
-    cursor: pointer;
-    display: none;
-}
-.chevronDown:hover, .chevronUp:hover, .download:hover, .soundOff:hover, .soundOn:hover{
-    color: white;
-}
-/* === END OF ICÔNS === */
 /* === CONTACT === */
 .formulaire-contact{
     position: absolute;
