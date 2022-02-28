@@ -1,4 +1,4 @@
-let camera, scene, renderer, cube;
+let camera, scene, renderer, earth;
 
 function init() {
 	// Init scene
@@ -22,21 +22,21 @@ function init() {
 	document.body.appendChild(renderer.domElement);
 
 	// Init BoxGeometry object (rectangular cuboid)
-	const geometry = new THREE.BoxGeometry(3, 3, 3);
+	const geometry = new THREE.SphereGeometry(2,32,16);
 
 	// Create material with color
-	const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+	//const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
 
 	// Add texture - 
-	//const texture = new THREE.TextureLoader().load("textures/crate.gif");
+	const texture = new THREE.TextureLoader().load("https://static.wikia.nocookie.net/planet-texture-maps/images/a/aa/Earth_Texture_Full.png/revision/latest/scale-to-width-down/2000?cb=20190401163425");
 
 	// Create material with texture
-	//const material = new THREE.MeshBasicMaterial({ map: texture });
+	const material = new THREE.MeshBasicMaterial({ map: texture });
 
-	// Create mesh with geo and material
-	cube = new THREE.Mesh(geometry, material);
+	// Create mesh with geo and material	
+	earth = new THREE.Mesh(geometry, material);
 	// Add to scene
-	scene.add(cube);
+	scene.add(earth);
 
 	// Position camera
 	camera.position.z = 5;
@@ -46,9 +46,9 @@ function init() {
 function animate() {
 	requestAnimationFrame(animate);
 
-	// Rotate cube (Change values to change speed)
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
+	// Rotate earth (Change values to change speed)
+	earth.rotation.x += 0.01;
+	earth.rotation.y += 0.01;
 
 	renderer.render(scene, camera);
 }
