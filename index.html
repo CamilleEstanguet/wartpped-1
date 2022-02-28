@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>Wartpped1</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/favicon.png" />
+    <script> 
+        function changerSon(son){
+            if(document.getElementById(son).className=="fas fa-volume-up soundOn"){
+                document.getElementById(son).className = "fas fa-volume-mute soundOff";
+            }else{
+                document.getElementById(son).className = "fas fa-volume-up soundOn";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="media/logo.png">
+        <div class="box-icons">
+            <i id="son" class="fas fa-volume-up soundOn" onclick="changerSon('son')"></i>
+            <i class="fas fa-download download"></i>
+        </div>
+    </header>
+    <div class="slidecontainer" id="range">
+        <output class="bullet" id="range-bullet"></output>
+        <input type="range" min="1800" max="2022" value="1800" class="slider" id="range-line">
+        <script>
+            var range = document.getElementById("range-line");
+            var bullet = document.getElementById("range-bullet");
+            range.addEventListener("input", () => { setBullet(range, bullet);} );
+            function setBullet(range, bullet) {
+                const val = range.value;
+                const min = range.min ? range.min : 0;
+                const max = range.max ? range.max : 100;
+                const newVal = Number(((val - min) * 100) / (max - min));
+                bullet.innerHTML = val;
+                bullet.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+            }
+        </script>
+    </div>
+    <ul class="menu">
+        <li><a href="">L'art in situ</a></li>
+        <li><a href="">Le land art</a></li>
+        <li><a href="">L'origine</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <i id="toggleSlider" class="fas fa-chevron-up chevronUp" onclick="showRange()"></i>
+    <i id="hideSlider" class="fas fa-chevron-down chevronDown" onclick="hideRange()"></i>
+    <script>
+        let slider = document.getElementById("range");
+        let up = document.getElementById("toggleSlider");
+        let down = document.getElementById("hideSlider");
+        function showRange() {
+            slider.style.display = "block";
+            up.style.display = "none";
+            down.style.display = "block";
+        }
+
+        function hideRange() {
+            slider.style.display = "none";
+            down.style.display = "none";
+            up.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
