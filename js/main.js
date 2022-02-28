@@ -42,13 +42,14 @@ function init() {
 	camera.position.z = 5;
 }
 
+
 // Draw the scene every time the screen is refreshed
 function animate() {
 	requestAnimationFrame(animate);
 
 	// Rotate earth (Change values to change speed)
-	earth.rotation.x += 0.01;
-	earth.rotation.y += 0.01;
+	earth.rotation.x += 0.005;
+	earth.rotation.y += 0.005;
 
 	renderer.render(scene, camera);
 }
