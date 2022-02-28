@@ -2,10 +2,8 @@
     {
       "titre": "Fish",
       "auteur": "Wolfgang Buntrock",
-      "dates" : [
-        "Octobre 1997",
-        "1997",
-        "Disparue"
+      "date" : [
+        "Date de création : Octobre 1997"
       ],
      
       "description" : [ "Œuvre créée en 1997  à Lillesand en Norvège. Cette œuvre représente un poisson fait en morceaux de bois. Seulement la moitié de ces morceaux sont émergés et la seconde moitié de l'animal est faite par les ombres.",
@@ -13,14 +11,14 @@
         ],
 
       "photos": [
-        "/fish/fish_1.jpeg",
-        "/fish/fish_2.jpg"
+        "media/fish/fish_1.jpeg",
+        "media/fish/fish_2.jpg"
       ],
 
       "localisation" : [
-          "Lillesand",
-          "Norvège",
-          "Photos du pays"
+        "media/fish/norvege.png",
+        "Localisation: Lillesand (Norvège)",
+        "Accessibilité : Disparu"
       ]
     },
 
@@ -28,23 +26,21 @@
         "titre": "Eisvirus",
         "auteur": "Frank Nordiek et Wolfgang Buntrock",
         "date" : [
-          "2016",
-          "2016",
-          "Disparue"
+          "Date de création : 2016"
         ],
        
         "description": ["Réalisé avec des branches de noisetier, ce dôme de glace de 3m de diamètre à été réalise sur le lac de Poggenhagen en Allemagne.",
         "L'oeuvre a disparu suite aux montées de température début 2017."
         ],
         "photos": [
-            "/eisvirus/eisvirus_1.jpg",
-            "/eisvirus/eisvirus_2.jpg",
-            "/eisvirus/eisvirus_3.jpg"
+            "media/eisvirus/eisvirus_1.jpg",
+            "media/eisvirus/eisvirus_2.jpg",
+            "media/eisvirus/eisvirus_3.jpg"
         ],
         "localisation" : [
-            "Poggenhagan",
-            "Allemagne",
-            "Photos du pays"
+          "media/eisvirus/allemagne.png",
+          "Localisation: Poggenhagan(Allemagne)",
+          "Accessibilité : Disparu"
         ]
       },
 
@@ -52,20 +48,18 @@
         "titre": "Arc de Triomphe Wrapped",
         "auteur": "Chrito et Jeanne-Claude",
         "date" : [
-          "18 Septembre 2021",
-          "3 Octobre 2021",
-          "Disparue"
+          "Date de création : 18 Septembre 2021"
         ],
        
         "description": ["L’équipe Christo et Jeanne-Claude a réalisé L’Arc de Triomphe, Wrapped, Paris (1961-2021), selon le vœu de Christo qui souhaitait la poursuite du projet après sa disparition, survenue le 31 mai 2020. "
         ],
         "photos": [
-            "/arcDeTriompheWrapped/arcDeTriomphe_1.png",
-            "/arcDeTriompheWrapped/arcDeTriomphe_2.jpg",
-            "/arcDeTriompheWrapped/arcDeTriomphe_3.jpg"
+            "media/arcDeTriompheWrapped/arcDeTriomphe_1.png",
+            "media/arcDeTriompheWrapped/arcDeTriomphe_2.jpg",
+            "media/arcDeTriompheWrapped/arcDeTriomphe_3.jpg"
         ],
         "localisation" : [
-            "Paris",
+            "media/arcDeTriompheWrapped/france.png",
             "France",
             "Photos du pays"
         ]

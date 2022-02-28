@@ -4,17 +4,6 @@
     src: url("fonts/Attentica\ 4F\ UltraLight.otf");
     src: url("fonts/Attentica\ 4F\ UltraLight.ttf");
 }
-@font-face {
-    font-family: "BlackMangoThin";
-    src: url("fonts/black-mango-thin.ttf");
-}
-@font-face {
-    font-family: "BodyGrotesque";
-    src: url("fonts/Body-Grotesque-Bold-trial.ttf");
-    src: url("fonts/Body-Grotesque-Fit-Bold-trial.ttf");
-    src: url("fonts/Body-Grotesque-Large-Bold-trial.ttf");
-    src: url("fonts/Body-Grotesque-Slim-Bold-trial.ttf");
-}
 /* === END OF FONTS === */
 
 /* === VARIABLES === */
@@ -25,7 +14,7 @@
 
 /* === COMMON === */
 body{
-    background-color: black;
+    background-image: url(https://diapogram.com/upload/2019/04/18/20190418004741-b4a333f7.jpg);
 }
 header{
     display: flex;
@@ -49,7 +38,15 @@ header{
 .box-icons:before{
     transform: translateX(20%);
 }
-.soundOn, .soundOff, .download{
+.soundOn{
+    visibility: visible;
+    cursor: pointer;
+}
+.soundOff{
+    visibility: hidden;
+    cursor: pointer;
+}
+.download{
     cursor: pointer;
 }
 .chevronUp{
@@ -174,7 +171,7 @@ header{
 
 /* === CONTACT === */
 .formulaire-contact{
-    position: fixed;
+    position: absolute;
     font-family: "Attentica";
     font-size: 45px;
     color: white;
@@ -182,7 +179,7 @@ header{
     top: 40%;
     left: 10%;
 }
-input[type=text], input[type=email], textarea, input[type=submit], input[type=reset]{
+input[type=text], input[type=email], textarea, input[type=submit]{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--grey-simple);
@@ -199,11 +196,10 @@ input[type=email]{
 textarea{
     width: 90%;
     resize: none;
-    grid-row: 5;
 }
-input[type=reset], input[type=submit]{
+input[type=submit]{
     border: 2px solid var(--grey-simple);
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[type=email]:focus, textarea:hover, textarea:active{
@@ -211,7 +207,7 @@ input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[t
     border-bottom: 2px solid white;
     color: white;
 }
-input[type=reset]:hover, input[type=submit]:hover{
+input[type=submit]:hover{
     outline: transparent;
     border: 2px solid white;
     color: white;

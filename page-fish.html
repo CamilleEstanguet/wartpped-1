@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>Wartpped1</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/favicon.png" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="media/logo.png">
+        <div class="box-icons">
+            <i class="fas fa-volume-up soundOn"></i>
+            <i class="fas fa-volume-mute soundOff"></i>
+            <i class="fas fa-download download"></i>
+        </div>
+    </header>
+
+    <script>
+    async function loadJson() {
+        const oeuvreCherche = "Fish";
+        var positionValeur = 0;
+
+        const response = await fetch('./oeuvre.json');
+        const oeuvres = await response.json();
+
+        for(i=0;i<4;i++){
+            if(oeuvres[i].titre==oeuvreCherche){
+                positionValeur = i;
+                break;
+            }
+        }
+
+        document.getElementById('titre').innerHTML = oeuvres[positionValeur].titre;;
+        document.getElementById('d1').innerHTML = oeuvres[positionValeur].description[0];
+        document.getElementById('d2').innerHTML = oeuvres[positionValeur].description[1];
+        document.getElementById('auteur').innerHTML = oeuvres[positionValeur].auteur;
+        document.getElementById('date').innerHTML = oeuvres[positionValeur].date;
+        document.getElementById("image1").src = oeuvres[positionValeur].photos[0];
+        document.getElementById("image2").src = oeuvres[positionValeur].photos[1];
+        document.getElementById("imagepays").src = oeuvres[positionValeur].localisation[0];
+        document.getElementById('localisation').innerHTML = oeuvres[positionValeur].localisation[1];
+        document.getElementById('accessibilite').innerHTML = oeuvres[positionValeur].localisation[2];
+        }
+    
+        loadJson();
+
+    </script>
+    <div class="page">
+        <div class="gauche">
+        <p class="description1" id="d1"></p>
+        </div>
+
+        <div class="milieu">
+            <img id="image1" src=""></img>
+            <img id="image2" src=""></img>
+            <h2 class="titre" id="titre"></h2>
+            <p class="auteur" id="auteur"></p>
+            <p class="date" id="date"></p>
+        </div>
+
+        <div class="droite">
+            <img id="imagepays" src=""></img>
+            <p class="localisation" id="localisation"></p>
+            <p class="accessibilite" id="accessibilite"></p>
+            <p class="description2" id="d2"></p>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -10,22 +10,15 @@
 
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="media/favicon.png" />
-    <script> 
-        function changerSon(son){
-            if(document.getElementById(son).className=="fas fa-volume-up soundOn"){
-                document.getElementById(son).className = "fas fa-volume-mute soundOff";
-            }else{
-                document.getElementById(son).className = "fas fa-volume-up soundOn";
-            }
-        }
-    </script>
+    
 </head>
 
 <body>
     <header>
         <img class="logo" src="media/logo.png">
         <div class="box-icons">
-            <i id="son" class="fas fa-volume-up soundOn" onclick="changerSon('son')"></i>
+            <i class="fas fa-volume-up soundOn"></i>
+            <i class="fas fa-volume-mute soundOff"></i>
             <i class="fas fa-download download"></i>
         </div>
     </header>
@@ -70,6 +63,21 @@
             up.style.display = "block";
         }
     </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+    <i id="chevronUp"class="fas fa-chevron-up"></i>
+    <i id="chevronDown"class="fas fa-chevron-down"></i>
 </body>
 
 </html>
