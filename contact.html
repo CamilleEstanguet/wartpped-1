@@ -10,15 +10,22 @@
 
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="media/favicon.png" />
-    
+    <script> 
+        function changerSon(son){
+            if(document.getElementById(son).className=="fas fa-volume-up soundOn"){
+                document.getElementById(son).className = "fas fa-volume-mute soundOff";
+            }else{
+                document.getElementById(son).className = "fas fa-volume-up soundOn";
+            }
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="logo" src="media/logo.png"></a>
         <div class="box-icons">
-            <i class="fas fa-volume-up soundOn"></i>
-            <i class="fas fa-volume-mute soundOff"></i>
+            <i id="son" class="fas fa-volume-up soundOn" onclick="changerSon('son')"></i>
             <i class="fas fa-download download"></i>
         </div>
     </header>
@@ -28,7 +35,7 @@
         Prenom <input type="text"><br>
         Mail <input type="email"><br>
         Message <br><textarea placeholder="Votre message ici"></textarea><br>
-        <input type="submit" value="Envoyer">
+        <input type="reset" value="Effacer"><input type="submit" value="Envoyer">
     </form>
 </body>
 

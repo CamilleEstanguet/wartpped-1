@@ -38,15 +38,7 @@ header{
 .box-icons:before{
     transform: translateX(20%);
 }
-.soundOn{
-    visibility: visible;
-    cursor: pointer;
-}
-.soundOff{
-    visibility: hidden;
-    cursor: pointer;
-}
-.download{
+.soundOn, .soundOff, .download{
     cursor: pointer;
 }
 .chevronUp{
@@ -171,7 +163,7 @@ header{
 
 /* === CONTACT === */
 .formulaire-contact{
-    position: absolute;
+    position: fixed;
     font-family: "Attentica";
     font-size: 45px;
     color: white;
@@ -179,7 +171,7 @@ header{
     top: 40%;
     left: 10%;
 }
-input[type=text], input[type=email], textarea, input[type=submit]{
+input[type=text], input[type=email], textarea, input[type=submit], input[type=reset]{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--grey-simple);
@@ -196,10 +188,11 @@ input[type=email]{
 textarea{
     width: 90%;
     resize: none;
+    grid-row: 5;
 }
-input[type=submit]{
+input[type=reset], input[type=submit]{
     border: 2px solid var(--grey-simple);
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[type=email]:focus, textarea:hover, textarea:active{
@@ -207,7 +200,7 @@ input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[t
     border-bottom: 2px solid white;
     color: white;
 }
-input[type=submit]:hover{
+input[type=reset]:hover, input[type=submit]:hover{
     outline: transparent;
     border: 2px solid white;
     color: white;
