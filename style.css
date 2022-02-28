@@ -216,3 +216,83 @@ input[type=reset]:hover, input[type=submit]:hover{
     border: 2px solid white;
     color: white;
 }
+
+/* CSS PAGES OEUVRES*/
+.page{
+    display:flex;
+    color:gray;
+}
+
+.gauche, .droite {
+    width:33%;
+    text-align:justify;
+    margin : 2% 5%;
+}
+
+.description1{
+    margin-top:40%;
+}
+
+.description2{
+    margin-top:20%;
+}
+
+.description1, .description2{
+    font-size: 25px;
+}
+
+.description1:hover, .description2:hover{
+    color: white;
+}
+
+.milieu {
+    width: 33%;
+    text-align: center;
+    color: white;
+}
+
+.milieu img {
+    border-radius: 50%;
+    display: block;
+    margin: 5% 0%;
+    width: 70%;
+    position: relative;
+    height: 50%;
+}
+
+#image1 {
+    z-index: 2;
+}
+
+#image2 {
+    z-index: 1;
+    margin-left: 30%;
+    margin-top: -30%;
+    opacity: 50%;
+}
+
+#image2:hover {
+    z-index: 2;
+    opacity: 100%;
+}
+
+.milieu .titre {
+    font-size: 50px;
+    margin : 0;
+}
+
+.milieu .auteur {
+    font-size: 40px;
+    margin : 0;
+}
+
+#imagepays {
+    width: 30%;
+    margin-left: 70%;
+    margin-top: -12%;
+}
+
+.localisation, .accessibilite {
+    color: white;
+    text-align: right;
+}
