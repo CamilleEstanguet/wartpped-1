@@ -1,0 +1,94 @@
+body{
+    background-color: black;
+}
+
+header{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.logo{
+    padding-top: 10px;
+}
+
+/* === ICÔNES ===*/
+.box-icons{
+    position: fixed;
+    color: var(--grey-simple);
+    font-size: 22px;
+    left: 90%;
+}
+
+.content{
+    display : flex;
+    flex-direction: column;
+}
+
+.art-in-situ-1{
+    color: aliceblue;
+    opacity: 50%;
+}
+
+.art-in-situ-1 p, .art-in-situ-2 p, .art-in-situ-3 p{
+    text-align: start;
+    width: 80%;
+    padding-left: 5%;
+}
+
+
+.art-in-situ-1:hover, .art-in-situ-2:hover, .art-in-situ-3:hover{
+    opacity: 100%;
+}
+
+.art-in-situ-2{
+    color: aliceblue;
+    opacity: 50%;
+}
+
+.art-in-situ-3{
+    color: aliceblue;
+    opacity: 50%;
+}
+
+/*Icônes*/
+#soundOn{
+    visibility: visible;
+    color: white;font-size: 22px;
+    position: absolute;
+    left: 96%;
+    padding-top: 10px;
+}
+#soundOff{
+    visibility: hidden;
+    color: white;font-size: 22px;
+    position: absolute;
+    left: 96%;
+    padding-top: 10px;
+}
+#download{
+    color: white;font-size: 22px;
+    position: absolute;
+    left: 98%;
+    transform: translate(5%);
+    padding-top: 10px;
+}
+#chevronUp{
+    color: white;font-size: 22px;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translate(-50%);
+    padding-top: 10px;
+}
+#chevronDown{
+    color: white;font-size: 22px;
+    position: absolute;
+    bottom: 11%;
+    left: 50%;
+    transform: translate(-50%);
+    padding-top: 10px;
+}

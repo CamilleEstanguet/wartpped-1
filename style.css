@@ -1,7 +1,32 @@
+/* === FONTS === */
+@font-face {
+    font-family: "Attentica";
+    src: url("fonts/Attentica\ 4F\ UltraLight.otf");
+    src: url("fonts/Attentica\ 4F\ UltraLight.ttf");
+}
+@font-face {
+    font-family: "BlackMangoThin";
+    src: url("fonts/black-mango-thin.ttf");
+}
+@font-face {
+    font-family: "BodyGrotesque";
+    src: url("fonts/Body-Grotesque-Bold-trial.ttf");
+    src: url("fonts/Body-Grotesque-Fit-Bold-trial.ttf");
+    src: url("fonts/Body-Grotesque-Large-Bold-trial.ttf");
+    src: url("fonts/Body-Grotesque-Slim-Bold-trial.ttf");
+}
+/* === END OF FONTS === */
+
+/* === VARIABLES === */
+:root{
+    --grey-simple: #f3f3f3bd; 
+}
+/* === END OF VARIABLES === */
+
+/* === COMMON === */
 body{
     background-color: black;
 }
-
 header{
     display: flex;
     align-content: center;
@@ -14,7 +39,6 @@ header{
 .logo{
     padding-top: 10px;
 }
-
 /* === ICÔNES ===*/
 .box-icons{
     position: fixed;
@@ -22,73 +46,173 @@ header{
     font-size: 22px;
     left: 90%;
 }
-
-.content{
-    display : flex;
-    flex-direction: column;
+.box-icons:before{
+    transform: translateX(20%);
 }
-
-.art-in-situ-1{
-    color: aliceblue;
-    opacity: 50%;
+.soundOn, .soundOff, .download{
+    cursor: pointer;
 }
-
-.art-in-situ-1 p, .art-in-situ-2 p, .art-in-situ-3 p{
-    text-align: start;
-    width: 80%;
-    padding-left: 5%;
-}
-
-
-.art-in-situ-1:hover, .art-in-situ-2:hover, .art-in-situ-3:hover{
-    opacity: 100%;
-}
-
-.art-in-situ-2{
-    color: aliceblue;
-    opacity: 50%;
-}
-
-.art-in-situ-3{
-    color: aliceblue;
-    opacity: 50%;
-}
-
-/*Icônes*/
-#soundOn{
-    visibility: visible;
-    color: white;font-size: 22px;
-    position: absolute;
-    left: 96%;
-    padding-top: 10px;
-}
-#soundOff{
-    visibility: hidden;
-    color: white;font-size: 22px;
-    position: absolute;
-    left: 96%;
-    padding-top: 10px;
-}
-#download{
-    color: white;font-size: 22px;
-    position: absolute;
-    left: 98%;
-    transform: translate(5%);
-    padding-top: 10px;
-}
-#chevronUp{
-    color: white;font-size: 22px;
-    position: absolute;
+.chevronUp{
+    color: var(--grey-simple);font-size: 22px;
+    position: fixed;
     bottom: 4%;
     left: 50%;
     transform: translate(-50%);
     padding-top: 10px;
+    cursor: pointer;
 }
-#chevronDown{
-    color: white;font-size: 22px;
-    position: absolute;
-    bottom: 11%;
+.chevronDown{
+    color: var(--grey-simple);font-size: 22px;
+    position: fixed;
+    bottom: 13%;
     left: 50%;
     transform: translate(-50%);
     padding-top: 10px;
+    cursor: pointer;
+    display: none;
+}
+.chevronDown:hover, .chevronUp:hover, .download:hover, .soundOff:hover, .soundOn:hover{
+    color: white;
+}
+/* === END OF ICÔNS === */
+/* === END OF COMMON === */
+
+/* === MENU ===*/
+.menu{
+    position: fixed;
+    right: 5%;
+    bottom: 20%;
+}
+.menu li{
+    font-family: "Attentica";
+    text-align: right;
+    padding: 5px 0;
+}
+.menu li a{
+    text-decoration: none;
+    color: var(--grey-simple);
+    font-size: 45px;
+}
+.menu li a:hover{
+    color: white;
+}
+/* === END OF MENU ===*/
+
+/* === SLIDER PART === */
+
+.slidecontainer {
+    width: 80%;
+    position: fixed;
+    bottom: 8%;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+}
+
+.slidecontainer:hover{opacity: 1;}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background: var(--grey-simple);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {opacity: 1;}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    /* 
+        Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
+    */
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    /* 
+        Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
+    */
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+}
+
+.bullet {
+    position: relative;
+    display: block;
+    width: 50;
+    height: 50;
+    margin-bottom: 5px;
+    line-height: 30px;
+    font-weight: bold;
+    padding-top: 22px;
+    box-sizing: border-box;
+    left: attr(value);
+    color: var(--grey-simple);
+    font-size: 24px;    
+    font-family: "Attentica";
+}
+/* === END OF SLIDER PART === */
+
+/* === CONTACT === */
+.formulaire-contact{
+    position: fixed;
+    font-family: "Attentica";
+    font-size: 45px;
+    color: white;
+    width: 90%;
+    top: 40%;
+    left: 10%;
+}
+input[type=text], input[type=email], textarea, input[type=submit], input[type=reset]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--grey-simple);
+    font-family: "Attentica";
+    font-size: 45px;
+    color: var(--grey-simple);
+}
+input[type=text]{
+    width: 40%;
+}
+input[type=email]{
+    width: 90%;
+}
+textarea{
+    width: 90%;
+    resize: none;
+    grid-row: 5;
+}
+input[type=reset], input[type=submit]{
+    border: 2px solid var(--grey-simple);
+    /* justify-content: center; */
+}
+
+input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[type=email]:focus, textarea:hover, textarea:active{
+    outline: transparent;
+    border-bottom: 2px solid white;
+    color: white;
+}
+input[type=reset]:hover, input[type=submit]:hover{
+    outline: transparent;
+    border: 2px solid white;
+    color: white;
 }
