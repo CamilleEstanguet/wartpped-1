@@ -1,27 +1,36 @@
 body{
     background-color: black;
 }
-#logo{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+
+header{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.logo{
     padding-top: 10px;
 }
-.planete{
-    position: absolute;
-    left: 5%;
-    transform: translate(-50%);
-    color: aliceblue;
+
+/* === ICÔNES ===*/
+.box-icons{
+    position: fixed;
+    color: var(--grey-simple);
+    font-size: 22px;
+    left: 90%;
+}
+
+.content{
+    display : flex;
+    flex-direction: column;
 }
 
 .art-in-situ-1{
-    position: absolute;
-    left : 15%;
-    top : 50%;
-    transform: translate(-50%);
     color: aliceblue;
     opacity: 50%;
-    width: 25%;
 }
 
 .art-in-situ-1 p, .art-in-situ-2 p, .art-in-situ-3 p{
@@ -36,23 +45,13 @@ body{
 }
 
 .art-in-situ-2{
-    position: absolute;
-    left : 85%;
-    top : 25%;
-    transform: translate(-50%);
     color: aliceblue;
     opacity: 50%;
-    width: 25%;
 }
 
 .art-in-situ-3{
-    position: absolute;
-    left : 75%;
-    top : 75%;
-    transform: translate(-50%);
     color: aliceblue;
     opacity: 50%;
-    width: 25%;
 }
 
 /*Icônes*/
