@@ -4,6 +4,17 @@
     src: url("fonts/Attentica\ 4F\ UltraLight.otf");
     src: url("fonts/Attentica\ 4F\ UltraLight.ttf");
 }
+@font-face {
+    font-family: "BlackMangoThin";
+    src: url("fonts/black-mango-thin.ttf");
+}
+@font-face {
+    font-family: "BodyGrotesque";
+    src: url("fonts/Body-Grotesque-Bold-trial.ttf");
+    src: url("fonts/Body-Grotesque-Fit-Bold-trial.ttf");
+    src: url("fonts/Body-Grotesque-Large-Bold-trial.ttf");
+    src: url("fonts/Body-Grotesque-Slim-Bold-trial.ttf");
+}
 /* === END OF FONTS === */
 
 /* === VARIABLES === */
