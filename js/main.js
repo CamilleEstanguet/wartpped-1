@@ -48,8 +48,8 @@ function animate() {
 	requestAnimationFrame(animate);
 
 	// Rotate earth (Change values to change speed)
-	earth.rotation.x += 0.005;
-	earth.rotation.y += 0.005;
+	earth.rotation.x += 0.001;
+	earth.rotation.y += 0.001;
 
 	renderer.render(scene, camera);
 }
