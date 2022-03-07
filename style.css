@@ -62,7 +62,8 @@ header{
     cursor: pointer;
 }
 .chevronDown{
-    color: var(--grey-simple);font-size: 22px;
+    color: var(--grey-simple);
+    font-size: 22px;
     position: fixed;
     bottom: 13%;
     left: 50%;
@@ -194,10 +195,10 @@ input[type=text]{
     width: 40%;
 }
 input[type=email]{
-    width: 90%;
+    width: 85.5%;
 }
 textarea{
-    width: 90%;
+    width: 89%;
     resize: none;
     grid-row: 5;
 }
