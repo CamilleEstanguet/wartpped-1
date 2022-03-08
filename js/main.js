@@ -1,6 +1,5 @@
-let camera, scene, renderer, earth;
+let camera, scene, renderer;
 
-function init() {
 	// Init scene
 	scene = new THREE.Scene();
 
@@ -17,41 +16,32 @@ function init() {
 
 	// Set size (whole window)
 	renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio)
 
 	// Render to canvas element
 	document.body.appendChild(renderer.domElement);
 
-	// Init BoxGeometry object (rectangular cuboid)
-	const geometry = new THREE.SphereGeometry(2,64,32);
+    //Create sphere
+    const sphere = new THREE.Mesh(
+        new THREE.SphereGeometry(5, 50, 50),
+        new THREE.MeshBasicMaterial({
+            map: new THREE.TextureLoader().load('http://adartza.iutbayonne.univ-pau.fr/~cestangue001/media/globe.jpg')
+        }))
+    
+    camera.position.z = 13
 
-	// Create material with color
-	//const material = new THREE.MeshBasicMaterial({ color: 0x0000ff });
 
-	// Add texture - 
-	const texture = new THREE.TextureLoader().load("https://static.wikia.nocookie.net/planet-texture-maps/images/a/aa/Earth_Texture_Full.png/revision/latest/scale-to-width-down/2000?cb=20190401163425");
-
-	// Create material with texture
-	const material = new THREE.MeshBasicMaterial({ map: texture });
-
-	// Create mesh with geo and material	
-	earth = new THREE.Mesh(geometry, material);
-	// Add to scene
-	scene.add(earth);
-
-	// Position camera
-	camera.position.z = 5;
-}
-
+    const group = new THREE.Group()
+    group.add(sphere)
+    scene.add(group)
 
 // Draw the scene every time the screen is refreshed
 function animate() {
 	requestAnimationFrame(animate);
 
-	// Rotate earth (Change values to change speed)
-	earth.rotation.x += 0.001;
-	earth.rotation.y += 0.001;
-
 	renderer.render(scene, camera);
+    sphere.rotation.y += 0.003
+    //group.rotation.y = mouse.x
 }
 
 function onWindowResize() {
@@ -65,5 +55,16 @@ function onWindowResize() {
 
 window.addEventListener('resize', onWindowResize, false);
 
-init();
 animate();
+
+const mouse = {
+    x: undefined,
+    y: undefined
+}
+addEventListener('mousemove', () => {
+    mouse.x = (event.ClientX / innerWidth) * 2 - 1
+    mouse.y = (event.ClientY / innerHeight) * 2 - 1
+
+    console.log(mouse)
+}
+)
