@@ -43,6 +43,17 @@ a{
     text-decoration: none;
     color: var(--grey-simple);
 }
+#burgerButtun, #toggle{
+    display: none;
+    font-size: 30px;
+    top: 6%;
+    cursor: pointer;
+    color: var(--grey-simple);
+    left: 90%;
+}
+#burgerButtun:hover, #toggle{
+    color: white;
+}
 /* === ICÔNES ===*/
 .box-icons{
     position: fixed;
@@ -241,24 +252,38 @@ input[type=reset]:hover, input[type=submit]:hover{
         max-width: 70%;
         margin-left: 15%;
     }
-    .box-icons{
+    #lesIcones{
         display: none;
     }
+    #burgerButtun{
+        display: flex;
+    }
+    #toggle:checked + #lesIcones{
+        display: flex !important; 
+        left: unset;
+        top: 65%
+    }
+    #toggle:checked + .menu{
+        display: flex;   
+        align-items: center;
+        right: 39%;
+        bottom: 33%;  
+    }
+    .menu{
+        display: none;
+        flex-direction: column;
+    }
     .slidecontainer{
-        width: 70%;
-        left: 0;
+        width: 75%;
+        left: -115px;
         bottom: 40%;
         transform: rotate(90deg);
-    }
-    /* .slider::-webkit-slider-thumb{
-        transform: rotate(90deg);
-        -webkit-transform: rotate(90deg);
-    }*/
-    /*.slider::-moz-range-thumb{
-        transform: rotate(-90deg);
+    }    
+    .slider::-moz-range-thumb{
+        /* transform: rotate(-90deg); */
         -webkit-transform: rotate(-90deg);
-    } /*
+    }
     .bullet{
-        transform: rotate(-90deg);
-    }*/
+        padding-top: 0;
+    }
 }

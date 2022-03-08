@@ -10,17 +10,12 @@
 
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="media/favicon.png" />
-    <audio id="laudio" src="media/space-ambience.mp3" loop></audio>
     <script> 
         function changerSon(son){
-            var audio = document.getElementById('laudio');
-            if(document.getElementById(son).className=="fas fa-volume-mute soundOff"){
-                document.getElementById(son).className = "fas fa-volume-up soundOn";
-                document.getElementById("laudio").play();
-                document.getElementById('laudio').muted = false;
-            }else{
+            if(document.getElementById(son).className=="fas fa-volume-up soundOn"){
                 document.getElementById(son).className = "fas fa-volume-mute soundOff";
-                document.getElementById('laudio').muted = true;
+            }else{
+                document.getElementById(son).className = "fas fa-volume-up soundOn";
             }
         }
     </script>
@@ -30,23 +25,17 @@
     <header>
         <a href="index.html"><img class="logo" src="media/logo.png"></a>
         <div class="box-icons">
-            <i id="son" class="fas fa-volume-mute soundOff" onclick="changerSon('son')"></i>
-            <a href="test.zip" download><i class="fas fa-download download"></i></a>
+            <i id="son" class="fas fa-volume-up soundOn" onclick="changerSon('son')"></i>
+            <i class="fas fa-download download"></i>
         </div>
     </header>
 
     <form class="formulaire-contact">
-        <div class="lesInfos">
-            <label>Nom </label><input type="text">
-            <label>Prenom </label><input type="text"><br>
-            <label>Mail </label><input type="email">          
-        </div><br>
-        <div class="leMessage">
-        <label>Message </label><br><textarea rows="5" placeholder="Votre message ici"></textarea>
-        </div><br>
-        <div class="lesBoutons">
-            <input type="reset" value="Effacer"><input type="submit" value="Envoyer">
-        </div>        
+        Nom <input type="text">
+        Prenom <input type="text"><br>
+        Mail <input type="email"><br>
+        Message <br><textarea placeholder="Votre message ici"></textarea><br>
+        <input type="reset" value="Effacer"><input type="submit" value="Envoyer">
     </form>
 </body>
 

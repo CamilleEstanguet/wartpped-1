@@ -23,13 +23,22 @@
                 document.getElementById('laudio').muted = true;
             }
         }
+        function changerIconesMenu(burger){
+            var buttun = document.getElementById("burgerButtun").textContent;
+            console.log(buttun);
+            if(buttun=="☰"){
+                document.getElementById("burgerButtun").textContent = "✖";
+            }else{
+                document.getElementById("burgerButtun").textContent = "☰";
+            }
+        }
     </script>
 </head>
 
 <body>
     <header>
         <a href="index.html"><img class="logo" src="media/logo.png"></a>
-        <div class="box-icons">
+        <div id="lesIcones" class="box-icons" for="toggle">
             <i id="son" class="fas fa-volume-mute soundOff" onclick="changerSon('son')"></i>
             <a href="test.zip" download><i class="fas fa-download download"></i></a>
         </div>
@@ -51,6 +60,8 @@
             }
         </script>
     </div>
+    <label id="burgerButtun" class="box-icons" for="toggle" onclick="changerIconesMenu(burgerButtun)">☰</label>
+    <input type="checkbox" id="toggle">
     <ul class="menu">
         <li><a href="">L'art in situ</a></li>
         <li><a href="">Le land art</a></li>
