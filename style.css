@@ -39,6 +39,10 @@ header{
 .logo{
     padding-top: 10px;
 }
+a{
+    text-decoration: none;
+    color: var(--grey-simple);
+}
 /* === ICÔNES ===*/
 .box-icons{
     position: fixed;
