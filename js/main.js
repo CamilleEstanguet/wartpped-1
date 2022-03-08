@@ -25,7 +25,7 @@ let camera, scene, renderer;
     const sphere = new THREE.Mesh(
         new THREE.SphereGeometry(5, 50, 50),
         new THREE.MeshBasicMaterial({
-            map: new THREE.TextureLoader().load('http://adartza.iutbayonne.univ-pau.fr/~cestangue001/media/globe.jpg')
+            map: new THREE.TextureLoader().load('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/570c9426-37ef-4869-b888-7da245b8a19f/del9sm5-8028b7e2-25ff-436f-889c-cb073876557a.jpg/v1/fill/w_1280,h_640,q_75,strp/earth_texture_map_by_wdawdawdwdaw_del9sm5-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQwIiwicGF0aCI6IlwvZlwvNTcwYzk0MjYtMzdlZi00ODY5LWI4ODgtN2RhMjQ1YjhhMTlmXC9kZWw5c201LTgwMjhiN2UyLTI1ZmYtNDM2Zi04ODljLWNiMDczODc2NTU3YS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.mopKGVfWzfNfkf3m1GqexwCAAHsJX4-Rp9cdpmcAahk')
         }))
     
     camera.position.z = 13
@@ -35,13 +35,19 @@ let camera, scene, renderer;
     group.add(sphere)
     scene.add(group)
 
-// Draw the scene every time the screen is refreshed
+    const mouse = {
+        x: undefined,
+        y: undefined
+    }
+
+    // Draw the scene every time the screen is refreshed
 function animate() {
 	requestAnimationFrame(animate);
 
 	renderer.render(scene, camera);
     sphere.rotation.y += 0.003
-    //group.rotation.y = mouse.x
+    group.rotation.y = mouse.x * 0.5
+    group.rotation.x = mouse.y *0.5
 }
 
 function onWindowResize() {
@@ -57,14 +63,9 @@ window.addEventListener('resize', onWindowResize, false);
 
 animate();
 
-const mouse = {
-    x: undefined,
-    y: undefined
-}
-addEventListener('mousemove', () => {
-    mouse.x = (event.ClientX / innerWidth) * 2 - 1
-    mouse.y = (event.ClientY / innerHeight) * 2 - 1
+addEventListener('mousemove', (event) => {
+    mouse.x = (event.clientX / innerWidth) * 2 - 1
+    mouse.y = (event.clientY / innerHeight) * 2 - 1
 
-    console.log(mouse)
 }
 )
