@@ -230,3 +230,31 @@ input[type=reset]:hover, input[type=submit]:hover{
     border: 2px solid white;
     color: white;
 }
+/* === END OF CONTACT === */
+/* === RESPONSIVE (en test) === */
+@media (max-width: 710px) {
+    .logo{
+        max-width: 70%;
+        margin-left: 15%;
+    }
+    .box-icons{
+        display: none;
+    }
+    .slidecontainer{
+        width: 70%;
+        left: 0;
+        bottom: 40%;
+        transform: rotate(90deg);
+    }
+    /* .slider::-webkit-slider-thumb{
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }*/
+    /*.slider::-moz-range-thumb{
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+    } /*
+    .bullet{
+        transform: rotate(-90deg);
+    }*/
+}
