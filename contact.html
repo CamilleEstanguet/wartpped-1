@@ -10,13 +10,20 @@
 
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="media/favicon.png" />
+    <audio id="laudio" src="media/space-ambience.mp3" loop></audio>
     <script> 
         function changerSon(son){
-            if(document.getElementById(son).className=="fas fa-volume-up soundOn"){
-                document.getElementById(son).className = "fas fa-volume-mute soundOff";
+            var leSon = document.getElementById(son).className;
+            var audio = document.getElementById('laudio');
+            if(leSon=="fas fa-volume-mute soundOff"){
+                leSon = "fas fa-volume-up soundOn";
+                document.getElementById("laudio").play();
+                audio.muted = false;
             }else{
-                document.getElementById(son).className = "fas fa-volume-up soundOn";
+                leSon = "fas fa-volume-mute soundOff";
+                audio.muted = true;
             }
+            document.getElementById(son).className = leSon;
         }
     </script>
 </head>
@@ -25,7 +32,7 @@
     <header>
         <a href="index.html"><img class="logo" src="media/logo.png"></a>
         <div class="box-icons">
-            <i id="son" class="fas fa-volume-up soundOn" onclick="changerSon('son')"></i>
+            <i id="son" class="fas fa-volume-mute soundOff" onclick="changerSon('son')"></i>
             <a href="test.zip" download><i class="fas fa-download download"></i></a>
         </div>
     </header>
