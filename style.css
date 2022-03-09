@@ -103,7 +103,7 @@ a{
     font-size: 22px;
     position: fixed;
     bottom: 50%;
-    left: 19%;
+    left: 20%;
     transform: translate(-50%);
     padding-top: 10px;
     cursor: pointer;
@@ -291,11 +291,19 @@ input[type=reset]:hover, input[type=submit]:hover{
         left: unset;
         top: 65%
     }
+    /*#toggle:checked ~ ul{
+        background-color: green;
+        opacity: 0.5;
+        padding: 1000px;
+        text-decoration: none;
+    }*/
     #toggle:checked ~ .menu{
+        opacity: 1;
         display: flex;   
         align-items: center;
         right: 39%;
         bottom: 33%;  
+        padding: 1px;
     }
     .menu{
         display: none;
