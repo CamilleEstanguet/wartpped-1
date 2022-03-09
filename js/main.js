@@ -1,5 +1,7 @@
 let camera, scene, renderer;
 
+const canvasContainer = document.querySelector('#canvasContainer')
+
 	// Init scene
 	scene = new THREE.Scene();
 
@@ -110,16 +112,21 @@ let camera, scene, renderer;
 
 
     const group = new THREE.Group()
-    group.add(sphere)
-	group.add(point)
-	group.add(pointA)
-	group.add(pointF)
-	group.add(pointE)
+	const groupEarth = new THREE.Group()
+    groupEarth.add(sphere)
+	groupEarth.add(point)
+	groupEarth.add(pointA)
+	groupEarth.add(pointF)
+	groupEarth.add(pointE)
+	group.add(groupEarth)
     scene.add(group)
 
     const mouse = {
         x: undefined,
-        y: undefined
+        y: undefined,
+		down: false,
+		xPrev: undefined,
+		yPrev: undefined
     }
 
     // Draw the scene every time the screen is refreshed
@@ -128,7 +135,7 @@ function animate() {
 
 	renderer.render(scene, camera);
     //sphere.rotation.y += 0.008
-	//group.rotation.y += 0.012
+	groupEarth.rotation.y += 0.001
     //group.rotation.y = mouse.x * 0.5
 }
 
@@ -145,8 +152,27 @@ window.addEventListener('resize', onWindowResize, false);
 
 animate();
 
+addEventListener('mousedown', ({clientX, clientY}) => {
+	mouse.down = true
+	mouse.xPrev = clientX
+	mouse.yPrev = clientY
+})
+addEventListener('mouseup', () => {
+	mouse.down = false
+})
+
 addEventListener('mousemove', (event) => {
     mouse.x = (event.clientX / innerWidth) * 2 - 1
     mouse.y = (event.clientY / innerHeight) * 2 - 1
+
+	if(mouse.down) {
+		const deltaX = event.clientX - mouse.xPrev
+		const deltaY = event.clientY - mouse.yPrev
+		group.rotation.y += deltaX *0.002
+		group.rotation.x += deltaY *0.002
+		mouse.xPrev = event.clientX
+		mouse.yPrev = event.clientY
+		
+	}
 })
 
