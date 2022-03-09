@@ -38,11 +38,17 @@
     </header>
 
     <form class="formulaire-contact">
-        Nom <input type="text">
-        Prenom <input type="text"><br>
-        Mail <input type="email"><br>
-        Message <br><textarea placeholder="Votre message ici"></textarea><br>
-        <input type="reset" value="Effacer"><input type="submit" value="Envoyer">
+        <div class="lesInfos">
+            <label>Nom </label><input type="text">
+            <label>Prenom </label><input type="text"><br>
+            <label>Mail </label><input type="email">          
+        </div><br>
+        <div class="leMessage">
+        <label>Message </label><br><textarea rows="5" placeholder="Votre message ici"></textarea>
+        </div><br>
+        <div class="lesBoutons">
+            <input type="reset" value="Effacer"><input type="submit" value="Envoyer">
+        </div>        
     </form>
 </body>
 
