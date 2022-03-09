@@ -13,15 +13,17 @@
     <audio id="laudio" src="media/space-ambience.mp3" loop></audio>
     <script> 
         function changerSon(son){
+            var leSon = document.getElementById(son).className;
             var audio = document.getElementById('laudio');
-            if(document.getElementById(son).className=="fas fa-volume-mute soundOff"){
-                document.getElementById(son).className = "fas fa-volume-up soundOn";
+            if(leSon=="fas fa-volume-mute soundOff"){
+                leSon = "fas fa-volume-up soundOn";
                 document.getElementById("laudio").play();
-                document.getElementById('laudio').muted = false;
+                audio.muted = false;
             }else{
-                document.getElementById(son).className = "fas fa-volume-mute soundOff";
-                document.getElementById('laudio').muted = true;
+                leSon = "fas fa-volume-mute soundOff";
+                audio.muted = true;
             }
+            document.getElementById(son).className = leSon;
         }
     </script>
 </head>
