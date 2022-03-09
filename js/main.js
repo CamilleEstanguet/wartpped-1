@@ -15,6 +15,7 @@ const canvasContainer = document.querySelector('#canvasContainer')
 
 	// Init renderer
 	renderer = new THREE.WebGLRenderer({ antialias: true });
+	//prout prout
 
 	// Set size (whole window)
 	renderer.setSize(window.innerWidth, window.innerHeight);
