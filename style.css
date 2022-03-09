@@ -87,7 +87,29 @@ a{
     cursor: pointer;
     display: none;
 }
-.chevronDown:hover, .chevronUp:hover, .download:hover, .soundOff:hover, .soundOn:hover{
+.chevronRight{
+    color: var(--grey-simple);
+    font-size: 22px;
+    position: fixed;
+    bottom: 50%;
+    left: 5%;
+    transform: translate(-50%);
+    padding-top: 10px;
+    cursor: pointer;
+    display: none;
+}
+.chevronLeft{
+    color: var(--grey-simple);
+    font-size: 22px;
+    position: fixed;
+    bottom: 50%;
+    left: 19%;
+    transform: translate(-50%);
+    padding-top: 10px;
+    cursor: pointer;
+    display: none;
+}
+.chevronDown:hover, .chevronUp:hover, .chevronRight:hover, .chevronLeft:hover,.download:hover, .soundOff:hover, .soundOn:hover{
     color: white;
 }
 /* === END OF ICÔNS === */
@@ -252,18 +274,24 @@ input[type=reset]:hover, input[type=submit]:hover{
         max-width: 70%;
         margin-left: 15%;
     }
+    .chevronUp{
+        display: none;
+    }
+    .chevronRight{
+        display: block;
+    }
     #lesIcones{
         display: none;
     }
     #burgerButtun{
         display: flex;
     }
-    #toggle:checked + #lesIcones{
-        display: flex !important; 
+    #toggle:checked ~ #lesIcones{
+        display: flex; 
         left: unset;
         top: 65%
     }
-    #toggle:checked + .menu{
+    #toggle:checked ~ .menu{
         display: flex;   
         align-items: center;
         right: 39%;
@@ -278,10 +306,6 @@ input[type=reset]:hover, input[type=submit]:hover{
         left: -115px;
         bottom: 40%;
         transform: rotate(90deg);
-    }    
-    .slider::-moz-range-thumb{
-        /* transform: rotate(-90deg); */
-        -webkit-transform: rotate(-90deg);
     }
     .bullet{
         padding-top: 0;
