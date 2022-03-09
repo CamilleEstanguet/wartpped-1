@@ -1,6 +1,6 @@
 let camera, scene, renderer;
 
-//const canvasContainer = document.querySelector('#canvasContainer')
+const canvasContainer = document.querySelector('#canvasContainer')
 
 	// Init scene
 	scene = new THREE.Scene();
@@ -14,10 +14,7 @@ let camera, scene, renderer;
 	);
 
 	// Init renderer
-	renderer = new THREE.WebGLRenderer({ 
-		antialias: true,
-		canvas: document.querySelector('canvas')
-	 });
+	renderer = new THREE.WebGLRenderer({ antialias: true });
 
 	// Set size (whole window)
 	renderer.setSize(window.innerWidth, window.innerHeight);
