@@ -1,6 +1,6 @@
 let camera, scene, renderer;
 
-const canvasContainer = document.querySelector('#canvasContainer')
+//const canvasContainer = document.querySelector('#canvasContainer')
 
 	// Init scene
 	scene = new THREE.Scene();
@@ -14,7 +14,10 @@ const canvasContainer = document.querySelector('#canvasContainer')
 	);
 
 	// Init renderer
-	renderer = new THREE.WebGLRenderer({ antialias: true });
+	renderer = new THREE.WebGLRenderer({ 
+		antialias: true,
+		canvas: document.querySelector('canvas')
+	 });
 
 	// Set size (whole window)
 	renderer.setSize(window.innerWidth, window.innerHeight);
@@ -66,7 +69,7 @@ const canvasContainer = document.querySelector('#canvasContainer')
 	const x = radius * Math.cos(latitude) * Math.sin(longitude)
 	const y = radius * Math.sin(latitude)
 	const z = radius * Math.cos(latitude) * Math.cos(longitude)
-	console.log({x, y, z})
+	//console.log({x, y, z})
 	point.position.x = x
 	point.position.y = y
 	point.position.z = z
@@ -78,7 +81,7 @@ const canvasContainer = document.querySelector('#canvasContainer')
 	const xA = radiusA * Math.cos(latitudeA) * Math.sin(longitudeA)
 	const yA = radiusA * Math.sin(latitudeA)
 	const zA = radiusA * Math.cos(latitudeA) * Math.cos(longitudeA)
-	console.log({xA, yA, zA})
+	//console.log({xA, yA, zA})
 	pointA.position.x = xA
 	pointA.position.y = yA
 	pointA.position.z = zA
@@ -90,7 +93,7 @@ const canvasContainer = document.querySelector('#canvasContainer')
 	const xF = radiusF * Math.cos(latitudeF) * Math.sin(longitudeF)
 	const yF = radiusF * Math.sin(latitudeF)
 	const zF = radiusF * Math.cos(latitudeF) * Math.cos(longitudeF)
-	console.log({xF, yF, zF})
+	//console.log({xF, yF, zF})
 	pointF.position.x = xF
 	pointF.position.y = yF
 	pointF.position.z = zF
@@ -102,7 +105,7 @@ const canvasContainer = document.querySelector('#canvasContainer')
 	const xE = radiusE * Math.cos(latitudeE) * Math.sin(longitudeE)
 	const yE = radiusE * Math.sin(latitudeE)
 	const zE = radiusE * Math.cos(latitudeE) * Math.cos(longitudeE)
-	console.log({xE, yE, zE})
+	//console.log({xE, yE, zE})
 	pointE.position.x = xE
 	pointE.position.y = yE
 	pointE.position.z = zE
