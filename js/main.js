@@ -38,25 +38,25 @@ const canvasContainer = document.querySelector('#canvasContainer')
     const point = new THREE.Mesh(
         new THREE.SphereGeometry(0.07, 50, 50),
         new THREE.MeshBasicMaterial({
-            color: '#ff0000'
+            color: '#ffff00'
         })
 	)
 	const pointA = new THREE.Mesh(
         new THREE.SphereGeometry(0.07, 50, 50),
         new THREE.MeshBasicMaterial({
-            color: '#ff0000'
+            color: '#ffff00'
         })
 	)
 	const pointF = new THREE.Mesh(
         new THREE.SphereGeometry(0.07, 50, 50),
         new THREE.MeshBasicMaterial({
-            color: '#ff0000'
+            color: '#ffff00'
         })
 	)
 	const pointE = new THREE.Mesh(
         new THREE.SphereGeometry(0.07, 50, 50),
         new THREE.MeshBasicMaterial({
-            color: '#ff0000'
+            color: '#ffff00'
         })
 	)
 	//Escout = 43.1833° N, -0.55° W
