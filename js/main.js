@@ -1,3 +1,8 @@
+import vertexShader from './shaders/vertex.glsl'
+import fragmentShader from './shaders/fragment.glsl'
+import atmosphereVertexShader from './shaders/atmosphereVertex.glsl'
+import atmosphereFragmentShader from './shaders/atmosphereFragment.glsl'
+
 let camera, scene, renderer;
 
 const canvasContainer = document.querySelector('#canvasContainer')
@@ -26,10 +31,15 @@ const canvasContainer = document.querySelector('#canvasContainer')
     //Create sphere
     const sphere = new THREE.Mesh(
         new THREE.SphereGeometry(5, 50, 50),
-        new THREE.MeshBasicMaterial({
-			//color: 0x77DD33
-            map: new THREE.TextureLoader().load('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/570c9426-37ef-4869-b888-7da245b8a19f/del9sm5-8028b7e2-25ff-436f-889c-cb073876557a.jpg/v1/fill/w_1280,h_640,q_75,strp/earth_texture_map_by_wdawdawdwdaw_del9sm5-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQwIiwicGF0aCI6IlwvZlwvNTcwYzk0MjYtMzdlZi00ODY5LWI4ODgtN2RhMjQ1YjhhMTlmXC9kZWw5c201LTgwMjhiN2UyLTI1ZmYtNDM2Zi04ODljLWNiMDczODc2NTU3YS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.mopKGVfWzfNfkf3m1GqexwCAAHsJX4-Rp9cdpmcAahk')
-        })
+        new THREE.ShaderMaterial({
+			vertexShader,
+			fragmentShader,
+			uniforms: {
+			  globeTexture: {
+				value: new THREE.TextureLoader().load('./textures/globe.jpg')
+			  }
+			}
+		  })
 	)
     
     camera.position.z = 13
