@@ -1,6 +1,6 @@
-let camera, scene, renderer;
+	let camera, scene, renderer;
 
-const canvasContainer = document.querySelector('#canvasContainer')
+	const canvasContainer = document.querySelector('#canvasContainer')
 
 	// Init scene
 	scene = new THREE.Scene();
@@ -36,91 +36,41 @@ const canvasContainer = document.querySelector('#canvasContainer')
 	)
     
     camera.position.z = 13
+	const group = new THREE.Group()
+	const groupEarth = new THREE.Group()
 
 	//Create point
-    const point = new THREE.Mesh(
-        new THREE.SphereGeometry(0.07, 50, 50),
-        new THREE.MeshBasicMaterial({
-            color: '#ffff00'
-        })
-	)
-	const pointA = new THREE.Mesh(
-        new THREE.SphereGeometry(0.07, 50, 50),
-        new THREE.MeshBasicMaterial({
-            color: '#ffff00'
-        })
-	)
-	const pointF = new THREE.Mesh(
-        new THREE.SphereGeometry(0.07, 50, 50),
-        new THREE.MeshBasicMaterial({
-            color: '#ffff00'
-        })
-	)
-	const pointE = new THREE.Mesh(
-        new THREE.SphereGeometry(0.07, 50, 50),
-        new THREE.MeshBasicMaterial({
-            color: '#ffff00'
-        })
-	)
-	//Escout = 43.1833° N, -0.55° W
-	const latitude = (43.1833 / 180) * Math.PI
-	const longitude = (-0.55 / 180) * Math.PI
+	function createPoint(lat, long){
+		const point = new THREE.Mesh(
+			new THREE.SphereGeometry(0.07, 50, 50),
+			new THREE.MeshBasicMaterial({
+				color: '#ffff00'
+			})
+		)
+	
+	const latitude = (lat / 180) * Math.PI
+	const longitude = (long / 180) * Math.PI
 	const radius = 5
 	const x = radius * Math.cos(latitude) * Math.sin(longitude)
 	const y = radius * Math.sin(latitude)
 	const z = radius * Math.cos(latitude) * Math.cos(longitude)
-	//console.log({x, y, z})
 	point.position.x = x
 	point.position.y = y
 	point.position.z = z
 
-	//Arc de Triomphe
-	const latitudeA = (48.873792 / 180) * Math.PI
-	const longitudeA = (2.295028 / 180) * Math.PI
-	const radiusA = 5
-	const xA = radiusA * Math.cos(latitudeA) * Math.sin(longitudeA)
-	const yA = radiusA * Math.sin(latitudeA)
-	const zA = radiusA * Math.cos(latitudeA) * Math.cos(longitudeA)
-	//console.log({xA, yA, zA})
-	pointA.position.x = xA
-	pointA.position.y = yA
-	pointA.position.z = zA
+	groupEarth.add(point)
+	}
 
-	//Fish
-	const latitudeF = (58.249500 / 180) * Math.PI
-	const longitudeF = (8.377200 / 180) * Math.PI
-	const radiusF = 5
-	const xF = radiusF * Math.cos(latitudeF) * Math.sin(longitudeF)
-	const yF = radiusF * Math.sin(latitudeF)
-	const zF = radiusF * Math.cos(latitudeF) * Math.cos(longitudeF)
-	//console.log({xF, yF, zF})
-	pointF.position.x = xF
-	pointF.position.y = yF
-	pointF.position.z = zF
-
-	//Eisvirus
-	const latitudeE = (52.2333 / 180) * Math.PI
-	const longitudeE = (9.2 / 180) * Math.PI
-	const radiusE = 5
-	const xE = radiusE * Math.cos(latitudeE) * Math.sin(longitudeE)
-	const yE = radiusE * Math.sin(latitudeE)
-	const zE = radiusE * Math.cos(latitudeE) * Math.cos(longitudeE)
-	//console.log({xE, yE, zE})
-	pointE.position.x = xE
-	pointE.position.y = yE
-	pointE.position.z = zE
+	createPoint(48.873792, 2.295028)
+	createPoint(43.1833, -0.55)
+	createPoint(58.249500, 8.377200)
+	createPoint(52.2333, 9.2)
 
 
 	sphere.rotation.y = -Math.PI / 2
 
 
-    const group = new THREE.Group()
-	const groupEarth = new THREE.Group()
     groupEarth.add(sphere)
-	groupEarth.add(point)
-	groupEarth.add(pointA)
-	groupEarth.add(pointF)
-	groupEarth.add(pointE)
 	group.add(groupEarth)
     scene.add(group)
 
