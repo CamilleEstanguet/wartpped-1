@@ -19,15 +19,22 @@
 
 /* === VARIABLES === */
 :root{
-    --grey-simple: #f3f3f3bd;
+    --grey-simple: #f3f3f3bd; 
 }
 /* === END OF VARIABLES === */
 
 /* === COMMON === */
 body{
     background-image: url(./media/fondespace.jpg);
-    font-family: "Attentica";
 }
+
+canvas {
+    width: 94%!important;
+    height: auto!important;
+    margin-top:-5%!important;
+    margin-left: 3%!important;
+}
+
 header{
     display: flex;
     align-content: center;
@@ -37,21 +44,6 @@ header{
     flex-wrap: nowrap;
     width: 100%;
 }
-
-canvas {
-  display: block!important;
-  width: 20%!important;
-  height: auto!important;
-  margin-top: -7%;
-}
-
-.petitePlanete {
-    position: absolute;
-    top: 18%;
-    left: 2%;
-    cursor:pointer;
-}
-
 .logo{
     padding-top: 10px;
 }
@@ -69,6 +61,7 @@ a{
 }
 #burgerButtun:hover, #toggle{
     color: white;
+    z-index: 2;
 }
 /* === ICÔNES ===*/
 .box-icons{
@@ -82,6 +75,8 @@ a{
 }
 .soundOn, .soundOff, .download{
     cursor: pointer;
+    color: #f3f3f3bd;
+    font-size: 30px;
 }
 .chevronUp{
     color: var(--grey-simple);font-size: 22px;
@@ -136,13 +131,42 @@ a{
     position: fixed;
     right: 5%;
     bottom: 20%;
+    -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+@-webkit-keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-100px);
+              transform: translateY(-100px);
+    }
+  }
+  
 
 .menu li{
     font-family: "Attentica";
     text-align: right;
-    padding: 5px 0;
+    padding: 2% 0;
 }
+
+.menu li:last-child{
+    display: none;
+}
+
 .menu li a{
     text-decoration: none;
     color: var(--grey-simple);
@@ -151,7 +175,12 @@ a{
 .menu li a:hover{
     color: white;
 }
-/* === END OF MENU ===*/
+/* === END OF MENU ===* /
+/* === PLANETE === */
+/*canvas{
+    aspect-ratio: auto 1920 / 900;
+}
+/* === END OF PLANETE === */
 
 /* === SLIDER PART === */
 
@@ -186,7 +215,7 @@ a{
     width: 15px;
     height: 15px;
     cursor: pointer;
-    /*
+    /* 
         Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
     */
     transform: rotate(-45deg);
@@ -200,7 +229,7 @@ a{
     width: 15px;
     height: 15px;
     cursor: pointer;
-    /*
+    /* 
         Pour le responsif il faudra penser à tourné le slider mais aussi le curseur avec les deux propriétés si dessous (transform et le webkit).
     */
     transform: rotate(-45deg);
@@ -222,7 +251,7 @@ a{
     box-sizing: border-box;
     left: attr(value);
     color: var(--grey-simple);
-    font-size: 24px;
+    font-size: 24px;    
     font-family: "Attentica";
 }
 /* === END OF SLIDER PART === */
@@ -286,7 +315,7 @@ input[type=reset]:hover, input[type=submit]:hover{
 }
 /* === END OF CONTACT === */
 /* === RESPONSIVE (en test) === */
-@media (max-width: 710px) {
+@media (max-width: 800px) {
     .logo{
         max-width: 70%;
         margin-left: 15%;
@@ -302,327 +331,97 @@ input[type=reset]:hover, input[type=submit]:hover{
     }
     #burgerButtun{
         display: flex;
+        z-index: 2;
     }
     #toggle:checked ~ #lesIcones{
-        display: flex;
+        display: flex; 
         left: unset;
         top: 65%
     }
     #toggle:checked ~ .menu{
         display: flex;
         align-items: center;
-        right: 39%;
-        bottom: 33%;
+        right: 0%;
+        bottom: -12%;
+        padding: 0%;
+        background: rgb(0,0,0,0.8);
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        z-index: 1;
     }
     .menu{
         display: none;
         flex-direction: column;
     }
+
+    .menu li:first-child{
+        margin-top: 43%;
+    }
+
+    .menu li:last-child{
+        display: block;
+    }
+
     .slidecontainer{
         width: 75%;
-        left: -115px;
+        left: -30%;
         bottom: 40%;
         transform: rotate(90deg);
     }
     .bullet{
         padding-top: 0;
     }
-}
 
-
-.logo{
-    padding-top: 10px;
-}
-
-h1{
-    color: aliceblue;
-    text-align: center;
-    font-size: 40px;
-}
-
-
-/* Art in situ*/
-.art-in-situ-1, .art-in-situ-2, .art-in-situ-3{
-    color: aliceblue;
-    opacity: 50%;
-    transition: 0.4s;
-}
-
-.art-in-situ-1 {
-    top : -10%;
-    position: relative;
-  }
-
-.art-in-situ-2 {
-    top : -25%;
-    position: relative;
-  }
-
-.art-in-situ-3 {
-  right: 40%;
-  top : -20%;
-  position: relative;
-}
-
-.art-in-situ-1 h2, .art-in-situ-2 h2, .art-in-situ-3 h2{
-  text-align: center;
-  font-size: 40px;
-}
-
-.art-in-situ-1 p, .art-in-situ-2 p, .art-in-situ-3 p{
-    width: 80%;
-    padding: 0% 10%;
-    font-family: none;
-    font-size: 20px;
-}
-
-.art-in-situ-1:hover, .art-in-situ-2:hover, .art-in-situ-3:hover{
-    opacity: 100%;
-    transform: scale(1.2);
-}
-
-/* CSS PAGES OEUVRES*/
-.pageInfos, .pageOeuvres{
-    display:flex;
-    color:gray;
-}
-
-.gauche, .droite {
-    width:25%;
-    text-align:justify;
-    margin : 2% 2%;
-}
-
-.italic {
-    font-style:italic;
-}
-
-.description1{
-    position: relative;
-    margin-top:40%;
-    left: 10%;
-}
-
-.description2{
-    position: relative;
-    margin-top: 50%;
-    left: -10%;
-}
-
-.description1, .description2{
-    transition: 0.4s;
-    font-family: none;
-    font-size: 20px;
-    padding: 0% 10%;
-}
-
-.description1:hover, .description2:hover{
-    color: white;
-    transform: scale(1.2);
-}
-
-.images {
-    display: flex;
-}
-
-.milieuArtInSitu .image1, .milieuArtInSitu .image2, .milieuOrigine .image1, .milieuOrigine .image2, .milieuOeuvres .image1, .milieuOeuvres .image2{
-    width: 50%;
-}
-
-.milieuOeuvres .image1{
-    width: 60%;
-}
-.milieuOeuvres .image2{
-    width: 40%;
-}
-
-.milieuLandArt .image1{
-    width: 25%;
-}
-
-.milieuLandArt .image2 {
-    width: 40%;
-}
-
-.milieuLandArt .image3{
-    width: 35%;
-}
-
-.milieuArtInSitu, .milieuLandArt, .milieuOrigine, .milieuOeuvres {
-    width: 50%;
-    text-align: center;
-    color: white;
-    margin: -1% 2%;
-    animation: flotement 6s linear infinite;
-}
-
-.milieuOeuvres {
-    margin: 0% 2% 5% 2%;
-}
-
-.milieuArtInSitu img, .milieuLandArt img, .milieuOrigine img, .milieuOeuvres img {
-    border-radius: 50%;
-    display: block;
-    position: relative;
-    height: auto;
-    width: 100%;
-}
-
-.milieuArtInSitu #image1, .milieuOrigine #image1 {
-    z-index: 2;
-    width: 60%;
-    height: auto;
-    left: 35%;
-    margin-top: 60%;
-    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
-}
-
-.milieuArtInSitu #image2, .milieuOrigine #image2 {
-    z-index: 1;
-    width: 100%;
-    height: auto;
-    opacity: 50%;
-    right: 35%;
-    margin-top: 5%;
-    transition: 0.4s;
-}
-
-.milieuOeuvres #image1 {
-    z-index: 2;
-    height: auto;
-    left: 20%;
-    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
-}
-
-.milieuOeuvres #image2 {
-    z-index: 1;
-    height: auto;
-    opacity: 50%;
-    right: 25%;
-    margin-top: 80%;
-    transition: 0.4s;
-}
-
-.milieuArtInSitu #image2:hover, .milieuLandArt #image1:hover, .milieuLandArt #image3:hover, .milieuOrigine #image2:hover, .milieuOeuvres #image2:hover {
-    z-index: 3;
-    opacity: 100%;
-}
-
-.milieuLandArt #image1 {
-    z-index: 1;
-    opacity: 50%;
-    margin-top: 35%;
-    left: 40%;
-    transition: 0.4s;
-}
-
-.milieuLandArt #image2 {
-    z-index: 2;
-    margin-top: 35%;
-    margin-left: 5%;
-    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
-}
-
-.milieuLandArt #image3 {
-    z-index: 1;
-    opacity: 50%;
-    right: 50%;
-    transition: 0.4s;
-}
-
-@keyframes flotement {
-    0% {
-        margin-top:0%;
-    }
-    50% {
-        margin-top:2%;
-    }
-    100% {
-        margin-top:0%;
+    .chevronLeft {
+        left: 12%;
     }
 }
 
-.milieuOeuvres .titre {
-    font-size: 50px;
-    margin : 0;
-    font-family: BlackMangoThin;
-}
-
-.milieuOeuvres .auteur {
-    font-size: 40px;
-    margin : 0;
-    font-family: BodyGrotesque;
-}
-
-.milieuOeuvres .date {
-    font-size: 30px;
-    margin : 0;
-}
-
-#imagepays {
-    width: 30%;
-    margin-left: 35%;
-    margin-top: -12%;
-}
-
-.localisation, .accessibilite {
-    color: white;
+.lesPins {
+    position: relative;
+    left: 11%;
+    margin-top: -40%;
     text-align: center;
-    font-size: 20px;
-    margin : 3%;
-    font-family: none;
+    width: 16%;
+}
+
+.lesPins h3{
+    color: white;
+}
+
+
+.lesPins a {
+    display: none;
+    padding: 1%;
+    text-align: center;
+    border: solid 3px white;
+    margin: 5% 0%;
+    font-weight: bold;
+    color: white;
 }
 
 @media (max-width: 1000px) {
     canvas {
-        margin-top: -14%;
+        width: 80%!important;
+        height: auto!important;
+        margin-top:-5%!important;
+        margin-left: 10%!important;
     }
 
-    .pageInfos, .pageOeuvres {
-        flex-direction: column;
-    }
-
-    .pageOeuvres {
-        flex-direction: column-reverse;
-    }
-
-    .gauche, .droite {
-        width:92%;
-        margin : 2% 4%;
-    }
-
-    .art-in-situ-2 {
-        left: 0%;
-        top : 0%;
-      }
-      
-      .art-in-situ-3 {
-        right: 0%;
-        top : 0%;
-      }
-
-    .milieuArtInSitu, .milieuLandArt, .milieuOrigine, .milieuOeuvres {
-        width: 92%;
-        margin: 2% 4%;
-        animation: none;
-    }
-
-    .description1, .description2{
-        font-size: 18px;
+    .lesPins {
         width: 80%;
-        margin: 2% 0%;
-        left:0%;
-        right:0%;
+        font-size: 20px;
+        margin-top: -22%;
+        left: 0%;
+        margin-left: 10%;
     }
 
-    #imagepays {
-        width: 26%;
-        margin-left: 37%;
-        margin-top: -7%;
+    .lesPins a {
+        width: 50%;
+        margin-left: 25%;
     }
-
-    .localisation, .accessibilite {
-        text-align: center;
-    }
-
 }
+
+
+

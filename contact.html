@@ -10,45 +10,35 @@
 
     <link href="style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="media/favicon.png" />
-    <audio id="laudio" src="media/space-ambience.mp3" loop></audio>
-    <script> 
-        function changerSon(son){
-            var leSon = document.getElementById(son).className;
-            var audio = document.getElementById('laudio');
-            if(leSon=="fas fa-volume-mute soundOff"){
-                leSon = "fas fa-volume-up soundOn";
-                document.getElementById("laudio").play();
-                audio.muted = false;
-            }else{
-                leSon = "fas fa-volume-mute soundOff";
-                audio.muted = true;
-            }
-            document.getElementById(son).className = leSon;
-        }
-    </script>
 </head>
 
 <body>
-    <header>
-        <a href="index.html"><img class="logo" src="media/logo.png"></a>
-        <div class="box-icons">
-            <i id="son" class="fas fa-volume-mute soundOff" onclick="changerSon('son')"></i>
-            <a href="test.zip" download><i class="fas fa-download download"></i></a>
-        </div>
-    </header>
+  <header>
+    <script src="js/three.js"></script>
+     <script src="js/main.js"></script>
+        <canvas class="petitePlanete" onclick="myFunction()"></canvas>
+      <img class="logo" src="media/logo.png">
+  </header>
+
+  <script>
+  function myFunction() {
+  document.location.href="index.html";
+  }
+  </script>
+
 
     <form class="formulaire-contact">
         <div class="lesInfos">
             <label>Nom </label><input type="text">
             <label>Prenom </label><input type="text"><br>
-            <label>Mail </label><input type="email">          
+            <label>Mail </label><input type="email">
         </div><br>
         <div class="leMessage">
         <label>Message </label><br><textarea rows="5" placeholder="Votre message ici"></textarea>
         </div><br>
         <div class="lesBoutons">
             <input type="reset" value="Effacer"><input type="submit" value="Envoyer">
-        </div>        
+        </div>
     </form>
 </body>
 
