@@ -134,7 +134,13 @@ a{
 .menu li a:hover{
     color: white;
 }
-/* === END OF MENU ===*/
+/* === END OF MENU ===* /
+/* === PLANETE === */
+/*canvas{
+
+    aspect-ratio: auto 1920 / 900;
+}
+/* === END OF PLANETE === */
 
 /* === SLIDER PART === */
 
