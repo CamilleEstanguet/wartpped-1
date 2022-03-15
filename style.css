@@ -316,4 +316,20 @@ input[type=reset]:hover, input[type=submit]:hover{
     .bullet{
         padding-top: 0;
     }
+    .formulaire-contact{
+        font-size: 35px;
+    }
+    input[type=text]{
+        width: 90%;
+        text-align: center;
+    }
+    input[type=email]{
+        width: 90%;
+    }
+    .lesBoutons{
+        margin-left: 18%;
+    }
+    input[type=submit]{
+        margin-left: 15px;
+    }
 }
