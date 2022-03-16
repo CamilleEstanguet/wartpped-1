@@ -1,131 +1,157 @@
-	let camera, scene, renderer;
+//import vertexShader from '../shaders/vertex.glsl'
+//import fragmentShader from '../shaders/fragment.glsl'
+//import atmosphereVertexShader from '../shaders/atmosphereVertex.glsl'
+//import atmosphereFragmentShader from '../shaders/atmosphereFragment.glsl'
 
-	const canvasContainer = document.querySelector('#canvasContainer')
+let camera, scene, renderer;
 
-	///==========================================================INIT THREEJS SCENE========================================================================================///
-	scene = new THREE.Scene();
+const canvasContainer = document.querySelector('#canvasContainer')
 
-	// Init camera (PerspectiveCamera)
-	camera = new THREE.PerspectiveCamera(
-		75,
-		window.innerWidth / window.innerHeight,
-		0.1,
-		1000
-	);
+///==========================================================INIT THREEJS SCENE========================================================================================///
+scene = new THREE.Scene();
 
-	// Init renderer
-	renderer = new THREE.WebGLRenderer({ 
-		antialias: true,
-		alpha: true 
-	});
+// Init camera (PerspectiveCamera)
+camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
 
-	// Set size (whole window)
-	renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio)
+// Init renderer
+renderer = new THREE.WebGLRenderer({ 
+  antialias: true,
+  alpha: true 
+});
 
-	// Render to canvas element
-	document.body.appendChild(renderer.domElement);
+// Set size (whole window)
+renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio)
 
-	///===================================================================MOUSE OBJECT==================================================================================///
-	const mouse = {
-        x: undefined,
-        y: undefined,
-		down: false,
-		xPrev: undefined,
-		yPrev: undefined
-    }
-	const raycaster = new THREE.Raycaster()
-	const pointer = new THREE.Vector2()
+// Render to canvas element
+document.body.appendChild(renderer.domElement);
 
-	function onPointerMove( event ) {
-	
-		pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-		pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-	
-	}
+///===================================================================MOUSE OBJECT==================================================================================///
+const mouse = {
+      x: undefined,
+      y: undefined,
+  down: false,
+  xPrev: undefined,
+  yPrev: undefined
+  }
+  const raycaster = new THREE.Raycaster()
 
-	///============================================================THREEJS SCENE=======================================================================================///
+///============================================================THREEJS SCENE=======================================================================================///
 
-    //Create sphere
-    const sphere = new THREE.Mesh(
-        new THREE.SphereGeometry(5, 50, 50),
-        new THREE.MeshBasicMaterial({
-			//color: 0x77DD33
-            map: new THREE.TextureLoader().load('http://lakartxela.iutbayonne.univ-pau.fr/~cestangue001/Wartpped-1/media/texxtur.png')
-        })
-	)
-	sphere.rotation.y = -Math.PI / 2
-    
-	//Setting the camera position higher to see the Earth
-    camera.position.z = 13
+  //Create sphere
+  const sphere = new THREE.Mesh(
+      new THREE.SphereGeometry(5, 50, 50),
+      /*new THREE.ShaderMaterial({
+        vertexShader,
+        fragmentShader,
+        uniforms: {
+          globeTexture: {
+            value: new THREE.TextureLoader().load('./textures/texxtur.png')
+          }
+        }
+      })*/
+	  new THREE.MeshBasicMaterial({
+		//color: 0x77DD33
+		map: new THREE.TextureLoader().load('./media/texxtur.png')
+	})
+  )
+sphere.rotation.y = -Math.PI / 2
+  
+/*const atmos = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 50, 50),
+  new THREE.ShaderMaterial({
+    vertexShader: atmosphereVertexShader,
+    fragmentShader: atmosphereFragmentShader,
+    blending: THREE.AdditiveBlending,
+    side: THREE.BackSide
+  })
+)
+
+atmos.scale.set(1.5, 1.5, 1.5)*/
+
+//Setting the camera position higher to see the Earth
+  camera.position.z = 13
 
 
-	//Group of objects creation
-	const group = new THREE.Group()
-	const points = new THREE.Group()
+//Group of objects creation
+const group = new THREE.Group()
+const points = new THREE.Group()
 
-	//Create point
-	function createPoint(lat, long){
-		const point = new THREE.Mesh(
-			new THREE.BoxGeometry(0.1, 0.1, 0.4),
-			new THREE.MeshBasicMaterial({
-				color: '#ff5500'
-			})
-		)
-	
-	const latitude = (lat / 180) * Math.PI
-	const longitude = (long / 180) * Math.PI
-	const radius = 5
-	const x = radius * Math.cos(latitude) * Math.sin(longitude)
-	const y = radius * Math.sin(latitude)
-	const z = radius * Math.cos(latitude) * Math.cos(longitude)
-	point.position.x = x
-	point.position.y = y
-	point.position.z = z
+//Create point
+function createPoint(name, lat, long){
+  const nameArt = name
+  const point = new THREE.Mesh(
+    new THREE.BoxGeometry(0.1, 0.1, 0.4),
+    new THREE.MeshBasicMaterial({
+      color: '#ff5500',
+      opacity: 0.8,
+      transparent: true
+    })
+  )
 
-	point.lookAt(0, 0, 0)
+const latitude = (lat / 180) * Math.PI
+const longitude = (long / 180) * Math.PI
+const radius = 5
+const x = radius * Math.cos(latitude) * Math.sin(longitude)
+const y = radius * Math.sin(latitude)
+const z = radius * Math.cos(latitude) * Math.cos(longitude)
+point.position.x = x
+point.position.y = y
+point.position.z = z
 
-	point.geometry.applyMatrix4( new THREE.Matrix4().makeTranslation(0, 0, -0.2))
+point.lookAt(0, 0, 0)
 
-	points.add(point)
-	}
+point.geometry.applyMatrix4( new THREE.Matrix4().makeTranslation(0, 0, -0.2))
 
-	//Creating the points needed
-	createPoint(48.873792, 2.295028)
-	createPoint(43.1833, -0.55)
-	createPoint(58.249500, 8.377200)
-	createPoint(52.2333, 9.2)
+points.add(point)
+}
 
-	//Adding The Earth and the Points to the group and the scene
-    group.add(sphere)
-	group.add(points)
-    scene.add(group)
+//Creating the points needed
+createPoint("arcDeTriomphe", 48.873792, 2.295028)
+createPoint("fish", 58.249500, 8.377200) 
+createPoint("eisvirus",52.2333, 9.2) 
+createPoint("levitatedMass", 34, -117.483330)
+createPoint("sunTunnels", 40.666667, -117.483330)
+createPoint("tibesti", 20.78, 18.05)
+createPoint("bunjilGeoglyph", -37.0201, 144.9646)
+
+//Adding The Earth and the Points to the group and the scene
+  group.add(sphere)
+group.add(points)
+  scene.add(group)
+  //scene.add(atmos)
+  console.log(points.children)
 
 ///======================================================================ANIMATION=============================================================///
 
-    // Draw the scene every time the screen is refreshed
+  // Draw the scene every time the screen is refreshed
 function animate() {
-	requestAnimationFrame(animate);
-	renderer.render(scene, camera);
-    group.rotation.y += 0.001
-	raycaster.setFromCamera( pointer, camera )
-	const intersects = raycaster.intersectObjects( scene.children )
-	//console.log(intersects)
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+  group.rotation.y += 0.001
 
-	for ( let i = 0; i < intersects.length; i ++ ) {
+  // update the picking ray with the camera and mouse position
+  raycaster.setFromCamera(mouse, camera)
 
-		//intersects[i].object.material.color.set(0xff0000)
+  const intersects = raycaster.intersectObjects(points.children)
 
-	}
+  for(let i = 0; i < intersects.length; i++){
+    console.log(intersects[i])
+  }
 }
 
 function onWindowResize() {
-	// Camera frustum aspect ratio
-	camera.aspect = window.innerWidth / window.innerHeight;
-	// After making changes to aspect
-	camera.updateProjectionMatrix();
-	// Reset size
-	renderer.setSize(window.innerWidth, window.innerHeight);
+// Camera frustum aspect ratio
+camera.aspect = window.innerWidth / window.innerHeight;
+// After making changes to aspect
+camera.updateProjectionMatrix();
+// Reset size
+renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
 window.addEventListener('resize', onWindowResize, false);
@@ -135,26 +161,26 @@ animate();
 
 ///========================================EVENT LISTENERS=================================================================================///
 addEventListener('mousedown', ({clientX, clientY}) => {
-	mouse.down = true
-	mouse.xPrev = clientX
-	mouse.yPrev = clientY
+mouse.down = true
+mouse.xPrev = clientX
+mouse.yPrev = clientY
 })
 addEventListener('mouseup', () => {
-	mouse.down = false
+mouse.down = false
 })
 
 addEventListener('mousemove', (event) => {
-    mouse.x = (event.clientX / innerWidth) * 2 - 1
-    mouse.y = (event.clientY / innerHeight) * 2 - 1
+  //console.log(event)
+  mouse.x = (event.clientX / innerWidth) * 2 - 1
+  mouse.y = (event.clientY / innerHeight) * 2 - 1
 
-	if(mouse.down) {
-		const deltaX = event.clientX - mouse.xPrev
-		const deltaY = event.clientY - mouse.yPrev
-		group.rotation.y += deltaX *0.002
-		group.rotation.x += deltaY *0.002
-		mouse.xPrev = event.clientX
-		mouse.yPrev = event.clientY
-		
-	}
+if(mouse.down) {
+  const deltaX = event.clientX - mouse.xPrev
+  const deltaY = event.clientY - mouse.yPrev
+  group.rotation.y += deltaX *0.002
+  group.rotation.x += deltaY *0.002
+  mouse.xPrev = event.clientX
+  mouse.yPrev = event.clientY
+  
+}
 })
-
