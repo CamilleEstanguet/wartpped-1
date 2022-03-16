@@ -26,14 +26,42 @@
 /* === COMMON === */
 body{
     background-image: url(./media/fondespace.jpg);
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 canvas {
-    width: 94%!important;
+    width: 200%!important;
     height: auto!important;
-    margin-top:-5%!important;
-    margin-left: 3%!important;
+    margin-top: -10%!important;
+    margin-left: -50%!important;  
 }
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
 
 header{
     display: flex;
@@ -77,6 +105,7 @@ a{
     cursor: pointer;
     color: #f3f3f3bd;
     font-size: 30px;
+    margin-left : 8px;
 }
 .chevronUp{
     color: var(--grey-simple);font-size: 22px;
@@ -128,11 +157,9 @@ a{
 
 /* === MENU ===*/
 .menu{
-    position: fixed;
-    right: 5%;
-    bottom: 20%;
+    margin-top: 80%;
     -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 @-webkit-keyframes slide-top {
@@ -191,6 +218,7 @@ a{
     left: 50%;
     transform: translate(-50%);
     display: none;
+    z-index: 3;
 }
 
 .slidecontainer:hover{opacity: 1;}
@@ -241,7 +269,6 @@ a{
 
 .bullet {
     position: relative;
-    display: block;
     width: 50;
     height: 50;
     margin-bottom: 5px;
@@ -256,150 +283,53 @@ a{
 }
 /* === END OF SLIDER PART === */
 
-/* === CONTACT === */
-.formulaire-contact{
-    display: flex;
-    flex-direction: column;
-    font-family: "Attentica";
-    font-size: 45px;
-    color: white;
-    width: 90%;
-    margin: 10% 0 0 10%;
-}
-.lesInfos{
-    width: 100%;
-}
-.leMessage{
-    width: 99.5%;
-}
-.lesBoutons{
-    margin-left: 40%;
-}
-label:last-child{
-    display: block;
-    text-align: center;
-    width: 89%;
-    text-align: center;
-}
-input[type=text], input[type=email], textarea, input[type=submit], input[type=reset]{
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--grey-simple);
-    font-family: "Attentica";
-    font-size: 45px;
-    color: var(--grey-simple);
-}
-input[type=text]{
-    width: 40%;
-}
-input[type=email]{
-    width: 85.5%;
-}
-textarea{
-    width: 89%;
-    resize: none;
-}
-input[type=reset], input[type=submit]{
-    border: 2px solid var(--grey-simple);
+.pageAccueil{
+    display:flex;
 }
 
-input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[type=email]:focus, textarea:hover, textarea:active{
-    outline: transparent;
-    border-bottom: 2px solid white;
-    color: white;
+.gauche, .droite {
+    width:25%;
+    margin : 2% 2%;
+    z-index: 2;
 }
-input[type=reset]:hover, input[type=submit]:hover{
-    outline: transparent;
-    border: 2px solid white;
-    color: white;
-}
-/* === END OF CONTACT === */
-/* === RESPONSIVE (en test) === */
-@media (max-width: 800px) {
-    .logo{
-        max-width: 70%;
-        margin-left: 15%;
-    }
-    .chevronUp{
-        display: none;
-    }
-    .chevronRight{
-        display: block;
-    }
-    #lesIcones{
-        display: none;
-    }
-    #burgerButtun{
-        display: flex;
-        z-index: 2;
-    }
-    #toggle:checked ~ #lesIcones{
-        display: flex; 
-        left: unset;
-        top: 65%
-    }
-    #toggle:checked ~ .menu{
-        display: flex;
-        align-items: center;
-        right: 0%;
-        bottom: -12%;
-        padding: 0%;
-        background: rgb(0,0,0,0.8);
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        z-index: 1;
-    }
-    .menu{
-        display: none;
-        flex-direction: column;
-    }
 
-    .menu li:first-child{
-        margin-top: 43%;
-    }
-
-    .menu li:last-child{
-        display: block;
-    }
-
-    .slidecontainer{
-        width: 75%;
-        left: -30%;
-        bottom: 40%;
-        transform: rotate(90deg);
-    }
-    .bullet{
-        padding-top: 0;
-    }
-
-    .chevronLeft {
-        left: 12%;
-    }
+.milieu {
+    width: 50%;
 }
 
 .lesPins {
-    position: relative;
-    left: 11%;
-    margin-top: -40%;
+    margin-left: 15%;
     text-align: center;
-    width: 16%;
+    width: 70%;
+    font-family: "Attentica";
+    font-size: 35px;
+}
+
+.pin {
+    display: none;
+}
+
+i[class="fa fa-map-pin"]{
+    padding-right:5px;
+    color:#ff5500;
 }
 
 .lesPins h3{
     color: white;
+    margin: 5%;
 }
-
 
 .lesPins a {
-    display: none;
     padding: 1%;
     text-align: center;
-    border: solid 3px white;
     margin: 5% 0%;
-    font-weight: bold;
+    color: gray;
+}
+
+.lesPins a:hover {
     color: white;
 }
+
 
 @media (max-width: 1000px) {
     canvas {

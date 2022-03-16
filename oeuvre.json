@@ -1,5 +1,6 @@
 [
     {
+      "id":"Fish",
       "titre": "Fish",
       "auteur": "Wolfgang Buntrock",
       "date" : [
@@ -25,6 +26,7 @@
     },
 
     {
+        "id":"Eisvirus",
         "titre": "Eisvirus",
         "auteur": "Frank Nordiek et Wolfgang Buntrock",
         "date" : [
@@ -48,6 +50,7 @@
       },
 
       {
+        "id":"Arc_de_Triomphe_Wrapped",
         "titre": "Arc de Triomphe Wrapped",
         "auteur": "Chrito et Jeanne-Claude",
         "date" : [
@@ -71,6 +74,7 @@
       },
 
       {
+        "id":"Levitated_Mass",
       "titre": "Levitated Mass",
       "auteur": "Michael Heizer",
       "date" : [
@@ -96,6 +100,7 @@
     },
 
     {
+      "id":"Sun_Tunnels",
       "titre": "Sun Tunnels",
       "auteur": "Nancy Holt",
       "date" : [
@@ -121,6 +126,7 @@
     },
 
     {
+      "id":"Wave_field",
       "titre": "Wave field",
       "auteur": "Maya Lin",
       "date" : [
@@ -146,6 +152,7 @@
     },
 
     {
+      "id":"Tibesti",
       "titre": "Tibesti",
       "auteur": "Jean Verame",
       "date" : [
@@ -171,6 +178,7 @@
     },
 
     {
+      "id":"Bunjil_Geoglyph",
       "titre": "Bunjil Geoglyph",
       "auteur": "Andrew Rogers",
       "date" : [
@@ -191,6 +199,32 @@
       "localisation" : [
         "media/bunjil_geoglyph/australie.png",
         "Localisation: parc national You Yangs(Australie)",
+        "Accessibilité : Accessible"
+      ]
+    },
+
+    {
+      "id":"Bobur",
+      "titre": "Bobur",
+      "auteur": "Nikola-Lenivets",
+      "date" : [
+        "Date de creation : 2018",
+        "2018",
+        "2022"
+      ],
+
+      "description" : [ "L'artiste russe Nikolay Polissky a créé une sculpture nommée BOBUR, dans le cadre d'un festival qui s'est tenu dans le parc Nikola-Lenivets, un parc dédié à l'art. La visite de Nikolay Polissky au Centre Pompidou, musée d’art moderne et contemporain de Paris, lui a donné l’inspiration pour créer une installation à grande échelle d’environ 22 mètres, situee dans les champs, entre le Nikola-Lenivets et les villages Zvizzhi.",
+       "La structure métallique complexe est tissé avec des branches de bouleau, Nikolay l’a tissée comme s’il s’agissait d’un panier géant, c’est une technique traditionnelle russe. Cette pièce d’art a été réalisée en utilisant une compétence presque perdue. Élément maître de BOBUR, un escalier en colimaçon mène à un site d’observation offrant une vue imprenable sur le paysage et les villages voisins."
+        ],
+
+      "photos": [
+        "media/bobur/bobur_1.jpg",
+        "media/bobur/bobur_2.jpg"
+      ],
+
+      "localisation" : [
+        "media/bobur/russie.png",
+        "Localisation: parc Nikola-Lenivets(Russie)",
         "Accessibilité : Accessible"
       ]
     }

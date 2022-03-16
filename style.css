@@ -27,7 +27,35 @@
 body{
     background-image: url(./media/fondespace.jpg);
     font-family: "Attentica";
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
 header{
     display: flex;
     align-content: center;
@@ -47,7 +75,7 @@ canvas {
 
 .petitePlanete {
     position: absolute;
-    top: 18%;
+    margin-top: 10%;
     left: 2%;
     cursor:pointer;
 }
@@ -574,9 +602,6 @@ h1{
 }
 
 @media (max-width: 1000px) {
-    canvas {
-        margin-top: -14%;
-    }
 
     .pageInfos, .pageOeuvres {
         flex-direction: column;
@@ -618,7 +643,7 @@ h1{
     #imagepays {
         width: 26%;
         margin-left: 37%;
-        margin-top: -7%;
+        margin-top: 0%;
     }
 
     .localisation, .accessibilite {
