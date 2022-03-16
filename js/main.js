@@ -1,7 +1,7 @@
-//import vertexShader from '../shaders/vertex.glsl'
-//import fragmentShader from '../shaders/fragment.glsl'
-//import atmosphereVertexShader from '../shaders/atmosphereVertex.glsl'
-//import atmosphereFragmentShader from '../shaders/atmosphereFragment.glsl'
+import vertexShader from '../shaders/vertex.glsl'
+import fragmentShader from '../shaders/fragment.glsl'
+import atmosphereVertexShader from '../shaders/atmosphereVertex.glsl'
+import atmosphereFragmentShader from '../shaders/atmosphereFragment.glsl'
 
 let camera, scene, renderer;
 
@@ -46,7 +46,7 @@ const mouse = {
   //Create sphere
   const sphere = new THREE.Mesh(
       new THREE.SphereGeometry(5, 50, 50),
-      /*new THREE.ShaderMaterial({
+      new THREE.ShaderMaterial({
         vertexShader,
         fragmentShader,
         uniforms: {
@@ -54,15 +54,15 @@ const mouse = {
             value: new THREE.TextureLoader().load('./textures/texxtur.png')
           }
         }
-      })*/
-	  new THREE.MeshBasicMaterial({
+      })
+	  /*new THREE.MeshBasicMaterial({
 		//color: 0x77DD33
 		map: new THREE.TextureLoader().load('./media/texxtur.png')
-	})
+	})*/
   )
 sphere.rotation.y = -Math.PI / 2
   
-/*const atmos = new THREE.Mesh(
+const atmos = new THREE.Mesh(
   new THREE.SphereGeometry(5, 50, 50),
   new THREE.ShaderMaterial({
     vertexShader: atmosphereVertexShader,
@@ -72,7 +72,7 @@ sphere.rotation.y = -Math.PI / 2
   })
 )
 
-atmos.scale.set(1.5, 1.5, 1.5)*/
+atmos.scale.set(1.5, 1.5, 1.5)
 
 //Setting the camera position higher to see the Earth
   camera.position.z = 13
@@ -124,7 +124,7 @@ createPoint("bunjilGeoglyph", -37.0201, 144.9646)
   group.add(sphere)
 group.add(points)
   scene.add(group)
-  //scene.add(atmos)
+  scene.add(atmos)
   console.log(points.children)
 
 ///======================================================================ANIMATION=============================================================///
