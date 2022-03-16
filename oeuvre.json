@@ -2,25 +2,25 @@
     {
       "titre": "Fish",
       "auteur": "Wolfgang Buntrock",
-      "dates" : [
-        "Octobre 1997",
+      "date" : [
+        "Date de creation : Octobre 1997",
         "1997",
-        "Disparue"
+        "1997"
       ],
-     
-      "description" : [ "Œuvre créée en 1997  à Lillesand en Norvège. Cette œuvre représente un poisson fait en morceaux de bois. Seulement la moitié de ces morceaux sont émergés et la seconde moitié de l'animal est faite par les ombres.",
+
+      "description" : [ "Œuvre créée en 1997  à Lillesand en Norvège. Cette œuvre représente un poisson fait en morceaux de bois. Seulement la moitié de ces morceaux est émergés et la seconde moitié de l'animal est faite par les ombres.",
        "L'oeuvre à certainement disparue suite aux changements climatiques et l'eau à probablement fait moisir le bois à cause de l'humidité."
         ],
 
       "photos": [
-        "/fish/fish_1.jpeg",
-        "/fish/fish_2.jpg"
+        "media/fish/fish_1.jpg",
+        "media/fish/fish_2.jpg"
       ],
 
       "localisation" : [
-          "Lillesand",
-          "Norvège",
-          "Photos du pays"
+        "media/fish/norvege.png",
+        "Localisation: Lillesand (Norvège)",
+        "Accessibilité : Disparu"
       ]
     },
 
@@ -28,23 +28,22 @@
         "titre": "Eisvirus",
         "auteur": "Frank Nordiek et Wolfgang Buntrock",
         "date" : [
+          "Date de creation : 2016",
           "2016",
-          "2016",
-          "Disparue"
+          "2016"
         ],
-       
+
         "description": ["Réalisé avec des branches de noisetier, ce dôme de glace de 3m de diamètre à été réalise sur le lac de Poggenhagen en Allemagne.",
         "L'oeuvre a disparu suite aux montées de température début 2017."
         ],
         "photos": [
-            "/eisvirus/eisvirus_1.jpg",
-            "/eisvirus/eisvirus_2.jpg",
-            "/eisvirus/eisvirus_3.jpg"
+            "media/eisvirus/eisvirus_1.jpg",
+            "media/eisvirus/eisvirus_2.jpg"
         ],
         "localisation" : [
-            "Poggenhagan",
-            "Allemagne",
-            "Photos du pays"
+          "media/eisvirus/allemagne.png",
+          "Localisation: Poggenhagan(Allemagne)",
+          "Accessibilité : Disparu"
         ]
       },
 
@@ -52,22 +51,172 @@
         "titre": "Arc de Triomphe Wrapped",
         "auteur": "Chrito et Jeanne-Claude",
         "date" : [
-          "18 Septembre 2021",
-          "3 Octobre 2021",
-          "Disparue"
+          "Date de creation : 18 Septembre 2021",
+          "2021",
+          "2021"
         ],
-       
-        "description": ["L’équipe Christo et Jeanne-Claude a réalisé L’Arc de Triomphe, Wrapped, Paris (1961-2021), selon le vœu de Christo qui souhaitait la poursuite du projet après sa disparition, survenue le 31 mai 2020. "
+
+        "description": ["L’équipe Christo et Jeanne-Claude a réalisé L’Arc de Triomphe, Wrapped, Paris (1961-2021), selon le vœu de Christo qui souhaitait la poursuite du projet après sa disparition, survenue le 31 mai 2020. ",
+          "Visible pendant 16 jours, du samedi 18 septembre au dimanche 3 octobre 2021, l'œuvre a nécessité 25 000 mètres carrés de tissu recyclable en polypropylène argent bleuté et 3000 mètres de corde rouge de la même matière."
         ],
         "photos": [
-            "/arcDeTriompheWrapped/arcDeTriomphe_1.png",
-            "/arcDeTriompheWrapped/arcDeTriomphe_2.jpg",
-            "/arcDeTriompheWrapped/arcDeTriomphe_3.jpg"
+            "media/arcDeTriompheWrapped/arcDeTriomphe_1.jpg",
+            "media/arcDeTriompheWrapped/arcDeTriomphe_2.jpg"
         ],
         "localisation" : [
-            "Paris",
-            "France",
-            "Photos du pays"
+            "media/arcDeTriompheWrapped/france.png",
+            "Localisation: Paris(France)",
+            "Accessibilité : Disparu"
         ]
-      }
+      },
+
+      {
+      "titre": "Levitated Mass",
+      "auteur": "Michael Heizer",
+      "date" : [
+        "Date de creation : 2011",
+        "2011",
+        "2012"
+      ],
+
+      "description" : [ "Sur le campus du Los Angeles County Museum of Art (LACMA), un drôle de rocher côtoie les palmiers californiens. Entre 2011 et 2012, Michael Heizer a installé à proximité de l’institution un monolithe de granite de plus de 300 tonnes au-dessus d’une tranchée par laquelle les visiteurs peuvent passer..",
+       "Pour créer son œuvre, conçue en 1968, l’artiste américain est allé sélectionner un rocher de la Jurupa Valley, située dans le grand Los Angeles. Cette étape essentielle dans la réalisation de l’œuvre a même été filmée par Doug Pray. Le réalisateur a suivi Michael Heizer de Riverside à Los Angeles pour son documentaire Levitated Mass, sorti en 2013."
+        ],
+
+      "photos": [
+        "media/levited_mass/levited_mass_1.jpg",
+        "media/levited_mass/levited_mass_2.jpg"
+      ],
+
+      "localisation" : [
+        "media/levited_mass/etats_unis.png",
+        "Localisation: Jurupa Valley(Etats Unis)",
+        "Accessibilité : Disparu"
+      ]
+    },
+
+    {
+      "titre": "Sun Tunnels",
+      "auteur": "Nancy Holt",
+      "date" : [
+        "Date de creation : 1973",
+        "1973",
+        "2022"
+      ],
+
+      "description" : [ "Dans le Great Bassin Desert de l’Utah se trouvent d’étranges cylindres. Posées par Nancy Holt entre 1973 et 1976 dans un désert qui semble s’étendre à l’infini, loin de toute forme de civilisation, ces buses en béton de 6 m de long pour 2,5 m de haut se font face autour d’un espace vide.",
+       "L’artiste américain a également troué ces cylindres pour former quatre constellations : le Dragon, Persée, la Colombe et le Capricorne. Un mini-cosmos dans l’immensité du Grand Ouest américain."
+        ],
+
+      "photos": [
+        "media/sun_tunnels/sun_tunnels_1.jpg",
+        "media/sun_tunnels/sun_tunnels_2.jpg"
+      ],
+
+      "localisation" : [
+        "media/sun_tunnels/etats_unis.png",
+        "Localisation: Great Bassin Desert(Etats Unis)",
+        "Accessibilité : Accessible"
+      ]
+    },
+
+    {
+      "titre": "Wave field",
+      "auteur": "Maya Lin",
+      "date" : [
+        "Date de creation : 1995",
+        "1995",
+        "2022"
+      ],
+
+      "description" : [ "Avec les montagnes de la vallée de l’Hudson en arrière-plan, cette œuvre au parc de sculptures Storm King à New York est composée de vagues vertes. Elles semblent tout à fait naturelles, comme si ces ondulations se produisaient naturellement sur terre, comme une surface aquatique.",
+       "Vue d’en haut, Wave Fields prend une forme assez différente. L’expérience de visiter cette œuvre en personne révèle sa hauteur, qui s’étend jusqu’à quatre mètre de haut parfois. Cette œuvre de land art et son échelle grandiose sont censées imiter les vagues de l’océan, produisant un effet totalement dépaysant."
+        ],
+
+      "photos": [
+        "media/wave_field/wave_field_1.jpg",
+        "media/wave_field/wave_field_2.jpg"
+      ],
+
+      "localisation" : [
+        "media/wave_field/etats_unis.png",
+        "Localisation: Storm King(Etats Unis)",
+        "Accessibilité : Accessible"
+      ]
+    },
+
+    {
+      "titre": "Tibesti",
+      "auteur": "Jean Verame",
+      "date" : [
+        "Date de creation : 1989",
+        "1989",
+        "2022"
+      ],
+
+      "description" : [ "Il a fallu quatre mois pour que Jean Vérame peigne vingt-neuf des massifs du désert du Tibesti. En 1989, l’artiste du land art n’était pas encore vu comme tel, souvent décrit comme « inclassable » à la place. Ses tableaux n’était pas accrochés aux murs des galeries ou à vendre à des prix exorbitants.",
+       "Au contraire, ils existaient simplement pour exister, en tant que symbole de l’existence humaine et de notre passage sur notre terre. Inspiré des mythes anciens, Verame espérait que ces montagnes peintes seraient également capables d’apporter la paix à la région."
+        ],
+
+      "photos": [
+        "media/tibesti/tibesti_1.jpg",
+        "media/tibesti/tibesti_2.jpg"
+      ],
+
+      "localisation" : [
+        "media/tibesti/libye.png",
+        "Localisation: Désert du Tibesti(Libye)",
+        "Accessibilité : Accessible"
+      ]
+    },
+
+    {
+      "titre": "Bunjil Geoglyph",
+      "auteur": "Andrew Rogers",
+      "date" : [
+        "Date de creation : 2006",
+        "2006",
+        "2022"
+      ],
+
+      "description" : [ "Cette photo montre un géoglyphe appelé Bunjil, qui en langue aborigène signifie Aigle. Il a été construit en 2006 par l'artiste australien de renommée mondiale  Andrew Rogers  dans le parc national You Yangs à Victoria, en Australie.",
+       "La sculpture en pierre commémore l'esprit créateur indigène, Bunjil et le peuple aborigène Wathaurong. La sculpture a la forme d'un égale à queue en coin. Traditionnellement, Bunjil formait toutes les caractéristiques naturelles de la terre, ses animaux, ses plantes et ses habitants. Bunjil a également accordé les lois et les traditions du peuple Wathaurong"
+        ],
+
+      "photos": [
+        "media/bunjil_geoglyph/bunjil_geoglyph_1.jpg",
+        "media/bunjil_geoglyph/bunjil_geoglyph_2.jpg"
+      ],
+
+      "localisation" : [
+        "media/bunjil_geoglyph/australie.png",
+        "Localisation: parc national You Yangs(Australie)",
+        "Accessibilité : Accessible"
+      ]
+    },
+
+    {
+      "titre": "Bobur",
+      "auteur": "Nikola-Lenivets",
+      "date" : [
+        "Date de creation : 2018",
+        "2018",
+        "2022"
+      ],
+
+      "description" : [ "L'artiste russe Nikolay Polissky a créé une sculpture nommée BOBUR, dans le cadre d'un festival qui s'est tenu dans le parc Nikola-Lenivets, un parc dédié à l'art. La visite de Nikolay Polissky au Centre Pompidou, musée d’art moderne et contemporain de Paris, lui a donné l’inspiration pour créer une installation à grande échelle d’environ 22 mètres, situee dans les champs, entre le Nikola-Lenivets et les villages Zvizzhi.",
+       "La structure métallique complexe est tissé avec des branches de bouleau, Nikolay l’a tissée comme s’il s’agissait d’un panier géant, c’est une technique traditionnelle russe. Cette pièce d’art a été réalisée en utilisant une compétence presque perdue. Élément maître de BOBUR, un escalier en colimaçon mène à un site d’observation offrant une vue imprenable sur le paysage et les villages voisins."
+        ],
+
+      "photos": [
+        "media/bobur/bobur_1.jpg",
+        "media/bobur/bobur_2.jpg"
+      ],
+
+      "localisation" : [
+        "media/bobur/russie.png",
+        "Localisation: parc Nikola-Lenivets(Russie)",
+        "Accessibilité : Accessible"
+      ]
+    }
   ]
