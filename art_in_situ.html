@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>Art In Situ</title>
+</head>
+
+<body>
+
+    <header>
+		<!--Affiche la planète en petit-->
+        <script src="js/three.js"></script>
+        <div class="petitePlanete" id="canvasContainer" onclick="myFunction()">
+            <canvas></canvas>
+        </div>
+        <script src="js/main.js"></script>
+        <img class="logo" src="media/logo.png" alt="Wartpped">
+    </header>
+
+    <script>
+		//Renvoie vers la page d'accueil
+        function myFunction() {
+            document.location.href = "index.html";
+        }
+    </script>
+
+    <h1>L'art in situ</h1>
+
+    <div class="pageInfos">
+        <div class="gauche">
+            <div class="art-in-situ-1">
+                <h2>Qu'est-ce que l'art in situ ?</h2>
+                <p>
+                    En art contemporain, <span class="italic">in situ</span>
+                    désigne une méthode artistique
+                    qui dédie l'œuvre à son site à
+                    d'accueil. <span class="italic">In situ</span> qualifie également
+                    une œuvre qui tient compte du
+                    lieu où elle est installée.
+                    L'archétype de la démarche
+                    artistique <span class="italic">in situ</span> est l'art urbain.
+                    L'œuvre perdrait sa signification si
+                    elle était déplacée.
+                </p>
+            </div>
+        </div>
+
+        <div class="milieuArtInSitu">
+            <div class="images">
+                <div class="image1">
+                    <img src="media/artInSitu/art-in-situ1.jpg" id="image1" alt="image art in situ">
+                </div>
+                <div class="image2">
+                    <img src="media/artInSitu/art-in-situ2.jpg" id="image2" alt="image art in situ">
+                </div>
+            </div>
+        </div>
+
+        <div class="droite">
+            <div class="art-in-situ-2">
+                <h2>L'art et l'espace public</h2>
+                <p>Si l’art en espace public se réfère à toute œuvre dans un
+                    lieu accessible au public, le terme <span class="italic">in situ</span> s’inscrit plutôt
+                    dans une logique artistique et signifie qu’une œuvre a été produite
+                    pour un site spécifique, même s’il n’est pas public. L’œuvre perdrait
+                    sa signification si elle était déplacée. Le terme anglais <span class="italic">site
+                        specificity</span>
+                    définit les mêmes rapports.
+                </p>
+            </div>
+
+
+            <div class="art-in-situ-3">
+
+                <p>
+                    Pourtant les liens entre l’œuvre et le lieu ne sont pas si limpides et,
+                    en dépit des nombreuses œuvres <span class="italic">in situ</span> dans l’espace public,
+                    on peut aujourd’hui s’interroger sur la manière dont l’art et l’espace
+                    urbain peuvent s’articuler.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

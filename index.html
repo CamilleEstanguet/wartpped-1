@@ -8,78 +8,163 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="style.css" rel="stylesheet">
+    <link href="styleIndex.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="media/favicon.png" />
-    <audio id="laudio" src="media/space-ambience.mp3" loop></audio>
-    <script> 
-        function changerSon(son){
-            var leSon = document.getElementById(son).className;
-            var audio = document.getElementById('laudio');
-            if(leSon=="fas fa-volume-mute soundOff"){
-                leSon = "fas fa-volume-up soundOn";
-                document.getElementById("laudio").play();
-                audio.muted = false;
-            }else{
-                leSon = "fas fa-volume-mute soundOff";
-                audio.muted = true;
-            }
-            document.getElementById(son).className = leSon;
-        }
-        function changerIconesMenu(burger){
-            var buttun = document.getElementById("burgerButtun").textContent;
-            if(buttun=="☰"){
-                document.getElementById("burgerButtun").textContent = "✖";
-            }else{
-                document.getElementById("burgerButtun").textContent = "☰";
-            }
-        }
-    </script>
 </head>
 
-<body>
+<body onload="loadPage()">
     <header>
-        <a href="index.html"><img class="logo" src="media/logo.png"></a>
-        <div id="lesIcones" class="box-icons" for="toggle">
-            <i id="son" class="fas fa-volume-mute soundOff" onclick="changerSon('son')"></i>
-            <a href="test.zip" download><i class="fas fa-download download"></i></a>
+        <a href="index.html"><img class="logo" src="media/logo.png" alt="Wartpped"></a>
+        <div id="lesIcones" class="box-icons">
+            <audio id="laudio" src="media/media_space_ambience.mp3" loop></audio>
+            <i id="son1" class="fas fa-volume-mute soundOff" onclick="changerSon('son')"></i>
+            <a href="Wartpped1.zip" download><i class="fas fa-download download"></i></a>
         </div>
     </header>
     <div class="slidecontainer" id="range">
-        <output class="bullet" id="range-bullet"></output>
-        <input type="range" min="1800" max="2022" value="1800" class="slider" id="range-line">
+        <output class="bullet" id="range-bullet">1917</output>
+        <input type="range" min="1917" max="2022" value="1917" class="slider" id="range-line">
+
         <script>
+			//Modifie la valeur affichée du slider. Récupère aussi la date en cours pour l'affichage des punaises
             var range = document.getElementById("range-line");
             var bullet = document.getElementById("range-bullet");
-            range.addEventListener("input", () => { setBullet(range, bullet);} );
-            function setBullet(range, bullet) {
+            range.addEventListener("input", () => { setBullet(range, bullet); });
+            async function setBullet(range, bullet) {
+                const response = await fetch('./oeuvre.json');
+                const oeuvres = await response.json();
                 const val = range.value;
                 const min = range.min ? range.min : 0;
                 const max = range.max ? range.max : 100;
                 const newVal = Number(((val - min) * 100) / (max - min));
                 bullet.innerHTML = val;
                 bullet.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+                var anneeVoulue = range.value;
+                localStorage.setItem("anneeVoulue", anneeVoulue);
+                for (i = 0; i < 9; i++) {
+                    if (oeuvres[i].date[1] <= range.value && oeuvres[i].date[2] >= range.value) {
+                        id = oeuvres[i].id;
+                        id = id + "_div";
+                        document.getElementById(id).style.display = "block";
+
+                    }
+                    else {
+                        id = oeuvres[i].id;
+                        id = id + "_div";
+                        document.getElementById(id).style.display = "none";
+                    }
+                }
+
             }
         </script>
+
     </div>
-    <label id="burgerButtun" class="box-icons" for="toggle" onclick="changerIconesMenu(burgerButtun)">☰</label>
-    <input type="checkbox" id="toggle">
-    <ul class="menu">
-        <li><a href="">L'art in situ</a></li>
-        <li><a href="">Le land art</a></li>
-        <li><a href="">L'origine</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <i id="toggleSlider" class="fas fa-chevron-up chevronUp" onclick="showRange()"></i>
-    <i id="hideSlider" class="fas fa-chevron-down chevronDown" onclick="hideRange()"></i>
-    <i id="toggleSliderResponsive" class="fa fa-chevron-right chevronRight" onclick="showRangeResponsive()"></i>
-    <i id="hideSliderResponsive" class="fa fa-chevron-left chevronLeft" onclick="hideRangeResponsive()"></i>
+    <div class="pageAccueil">
+        <div class="gauche">
+            <div class="lesPins">
+                <h3>Oeuvres disponibles</h3>
+                <div class="pin" id="Fish_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeFish()" id="Fish">Fish</a>
+                </div>
+                <div class="pin" id="Eisvirus_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeEisvirus()" id="Eisvirus">Eisvirus</a>
+                </div>
+                <div class="pin" id="Arc_de_Triomphe_Wrapped_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeArc_de_Triomphe_Wrapped()"
+                        id="Arc_de_Triomphe_Wrapped">Arc de Triomphe Wrapped</a>
+                </div>
+                <div class="pin" id="Levitated_Mass_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeLevitated_Mass()" id="Levitated_Mass">Levitated
+                        Mass</a>
+                </div>
+                <div class="pin" id="Sun_Tunnels_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeSun_Tunnels()" id="Sun_Tunnels">Sun Tunnels</a>
+                </div>
+                <div class="pin" id="Wave_field_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeWave_Field()" id="Wave_Field">Wave Field</a>
+                </div>
+                <div class="pin" id="Tibesti_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeTibesti()" id="Tibesti">Tibesti</a>
+                </div>
+                <div class="pin" id="Bunjil_Geoglyph_div">
+                    ><i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeBunjil_Geoglyph()" id="Bunjil_Geoglyph">Bunjil
+                        Geoglyph</a>
+                </div>
+                <div class="pin" id="Bobur_div">
+                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                    <a href="./page-oeuvres.html" onclick="sauvegardeBobur()" id="Bobur">Bobur</a>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="droite">
+            <label id="burgerButtun" class="box-icons" for="toggle" onclick="changerIconesMenu(burgerButtun)">☰</label>
+            <input type="checkbox" id="toggle">
+            <ul class="menu">
+                <li><a href="art_in_situ.html">L'art in situ</a></li>
+                <li><a href="land_art.html">Le land art</a></li>
+                <li><a href="origine.html">L'origine</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><i id="son2" class="fas fa-volume-mute soundOff" onclick="changerSon('son')"></i>
+                    <a href="test.zip" download><i class="fas fa-download download"></i></a>
+                </li>
+            </ul>
+            <i id="toggleSlider" class="fas fa-chevron-up chevronUp" onclick="showRange()"></i>
+            <i id="hideSlider" class="fas fa-chevron-down chevronDown" onclick="hideRange()"></i>
+            <i id="toggleSliderResponsive" class="fa fa-chevron-right chevronRight" onclick="showRangeResponsive()"></i>
+            <i id="hideSliderResponsive" class="fa fa-chevron-left chevronLeft" onclick="hideRangeResponsive()"></i>
+        </div>
+    </div>
     <script src="js/three.js"></script>
-	<script src="js/main.js">
-    </script>
-    <div>
+    <div id="canvasContainer">
         <canvas></canvas>
     </div>
+    <script type="module" src="js/main.js"></script>
+
     <script>
+	//Réinitialise les valeurs stockées
+        function loadPage() {
+            localStorage.clear()
+        }
+	
+	//Change l'icone du volume et coupe la musique
+        function changerSon(son) {
+            var leSon = document.getElementById('son1').className;
+            var audio = document.getElementById('laudio');
+            if (leSon == "fas fa-volume-mute soundOff") {
+                leSon = "fas fa-volume-up soundOn";
+                document.getElementById("laudio").play();
+                audio.muted = false;
+            }
+
+            else {
+                leSon = "fas fa-volume-mute soundOff";
+                audio.muted = true;
+            }
+            document.getElementById('son1').className = leSon;
+            document.getElementById('son2').className = leSon;
+        }
+
+	//Change l'icon du menu burger
+        function changerIconesMenu(burger) {
+            var buttun = document.getElementById("burgerButtun").textContent;
+            if (buttun == "☰") {
+                document.getElementById("burgerButtun").textContent = "✖";
+            } else {
+                document.getElementById("burgerButtun").textContent = "☰";
+            }
+        }
         let slider = document.getElementById("range");
         let up = document.getElementById("toggleSlider");
         let down = document.getElementById("hideSlider");
@@ -112,6 +197,52 @@
             up.style.display = "none";
             right.style.display = "block";
             left.style.display = "none";
+        }
+
+		//Sauvegarde le nom de l'oeuvre sur lequel on clique
+        function sauvegardeFish() {
+            var nomOeuvreVoulue = document.getElementById("Fish").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeEisvirus() {
+            var nomOeuvreVoulue = document.getElementById("Eisvirus").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeArc_de_Triomphe_Wrapped() {
+            var nomOeuvreVoulue = document.getElementById("Arc_de_Triomphe_Wrapped").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeLevitated_Mass() {
+            var nomOeuvreVoulue = document.getElementById("Levitated_Mass").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeSun_Tunnels() {
+            var nomOeuvreVoulue = document.getElementById("Sun_Tunnels").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeWave_Field() {
+            var nomOeuvreVoulue = document.getElementById("Wave_Field").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeTibesti() {
+            var nomOeuvreVoulue = document.getElementById("Tibesti").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeBunjil_Geoglyph() {
+            var nomOeuvreVoulue = document.getElementById("Bunjil_Geoglyph").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
+        }
+
+        function sauvegardeBobur() {
+            var nomOeuvreVoulue = document.getElementById("Bobur").innerHTML;
+            localStorage.setItem("nomOeuvreVoulue", nomOeuvreVoulue);
         }
     </script>
 </body>
